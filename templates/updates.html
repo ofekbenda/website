@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>updates</title>
+    <link rel="stylesheet" href="../css/Updates.css">
+<!--    <script src="{{ url_for('static', filename= 'javascript/updates.js') }}"></script>-->
+</head>
+
+<body>
+<!-- topbar -->
+<div class="topbar" id="topbar">
+    <div class="topbar-stmbols">
+        <img class="padam-symbol" src='./images/padam_symbol.png'/>
+        <img class="padam-symbol" src='./images/intelligence_symbol.png'/>
+    </div>
+    <div class="topbar-title">
+        <h1 id="main-topbar-title">פיקוד דרום</h1>
+        <h2 id="second-topbar-title">ענף מרחב חכם</h2>
+    </div>
+    <div class="topbar-nev">
+        <div class="home-nav-container">
+            <a href="/"><div class="home-nav-link"></div></a>
+        </div>
+        <div class="dropdown-nav-container">
+            <a href="#" class="dropdown-nav-link">
+                <div class="dropdown-nav close" id="dropdown-nav">
+                    <div class="row" id="row-1"></div>
+                    <div class="row" id="row-2"></div>
+                    <div class="row" id="row-3"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="dropdown-menu-container" id="dropdown-menu-container">
+    <div class="dropdown-menu" id="dropdown-menu">
+        <a href="/">דף בית</a>
+        <a href="updates">תור עדכונים</a>
+        <a href="#">מאתרים ומאגרים</a>
+        <a href="#">מקורות וסג"חים</a>
+        <a href="#">כלים</a>
+    </div>
+</div>
+
+
+<div id="content-container">
+    <!-- tag-filters container -->
+    <div id = "tags_for_filter">
+        <button onclick="FilterByTag(value)" value="הצג הכל" class="btn" id = "btn_הצג הכל">הצג הכל</button>
+        {% for tag,color in topics.items(): %}
+            <button onclick="FilterByTag(value)" value={{tag}} class="btn" id = "btn_{{tag}}">{{tag}} <div class="vl"></div></button>
+        {% endfor %}
+    </div>
+
+    <!-- Updates Components -->
+    <div id="all-mail-container">
+    {% for i,row in mails.iterrows(): %}
+        {% with title, date, author, gist, tags, path = row %}
+        <div class="mail_container" id = "mail_container_{{i}}">
+            <a href="mails/{{path}}" target="_blank" >
+             <br>
+             <div class="content_container" id="content_container_{{i}}">
+
+                 <h1 class="mail_title">{{title}}</h1>
+                 <div id="tags_container">
+                    {% for tag in tags.split(","): %}
+                        {% with color = topics[tag] %}
+                        <div class="mail_tags" style="--tag-color:{{color}};">{{tag}}</div>
+                        {% endwith %}
+                    {% endfor %}
+                </div>
+                 <p class="mail_details">{{date}}  {{author}}</p>
+
+                 <p class="mail_gist" id="mail_gist_{{i}}">{{gist}}</p>
+
+            </div>
+            </a>
+        </div>
+        {%endwith%}
+    {% endfor %}
+    </div>
+</div>
+
+
+    <script src="../javascript/http_code.jquery.com_jquery-3.5.1.js"></script>
+    <script src="../javascript/updates.js"></script>
+    <script src="../javascript/topbarAnimation.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+@import "topbarStyle.css";
+
+@font-face {
+  font-family: MPlus;
+  src: url('../fonts/MPLUSRounded1c-Bold.ttf');
+}
+
+@font-face {
+    font-family: SecularOne;
+    src: url("../fonts/SecularOne-Regular.ttf");
+}
+
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    background: #E6F1E9;
+    /*grid-template:*/
+    /*        "header header" 80px*/
+    /*        "mails sidebar" 80vh*/
+    /*        "footer footer" 80px /*/
+    /*         80%    20%;*/
+    display: grid;
+    grid-template:
+            "sidebar" 100px
+            "mails" 80vh/
+              100%;
+        /*"mails sidebar" auto /*/
+        /* auto    200px;*/
+    overflow: scroll;
+}
+
+#content-container{
+    margin-top: 8rem;
+}
+#all-mail-container {
+    grid-area: mails;
+}
+.mail_container {
+    width: 80%;
+    margin: auto;
+}
+
+.content_container{
+    width: 100%;
+    text-align: right;
+    margin: auto;
+    border-style: initial;
+    -webkit-border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 35%);
+    background: white;
+    color: #6b705c;
+    padding: 3px;
+}
+
+#tags_container{
+    grid-area: sidebar;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.mail_details, .mail_gist{
+    font-family: SecularOne;
+    padding-right: 20px;
+    color: #a5a58d;
+    font-size: 21px;
+}
+
+.mail_tags{
+    font-family: SecularOne;
+    background-color: var(--tag-color);
+    width: 128px;
+    height: 32px;
+    position: relative;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: white;
+
+}
+
+.mail_tags:after {
+    left: 87%;
+    content: "";
+    position: absolute;
+    border-top: 17px solid transparent;
+    border-right: 17px solid;
+    border-bottom: 17px solid transparent;
+}
+
+.mail_tags:before{
+    right: 100%;
+    content: "";
+    position: absolute;
+    border-top: 16px solid transparent;
+    border-right: 17px solid var(--tag-color);
+    border-bottom: 16px solid transparent;
+}
+
+.mail_title{
+    font-family: SecularOne;
+    padding-right: 20px;
+    font-weight: 500;
+}
+
+#tags_for_filter{
+    display: flex;
+    padding-inline: 10px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    direction: rtl;
+    width: 80%;
+    margin: auto;
+}
+
+.btn{
+    background: #84a59d;
+    color: white;
+    font-size: 19px;
+    font-family: system-ui;
+    border: none;
+    cursor: pointer;
+    width: 110px;
+    margin-left: 12px;
+    min-width: fit-content;
+}
+
+.btn:hover{
+    background: #577590;
+}
+.clicked{
+    color: white;
+    background: #577590;
+    border: none;
+}

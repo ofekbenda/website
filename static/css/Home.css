@@ -1,0 +1,155 @@
+@import "topbarStyle.css";
+
+body{
+    background: whitesmoke;
+    display: grid;
+    margin: 0;
+}
+
+/*------------------ 1th row container ----------*/
+.Rowcontainer-main{
+    background-image: url("../images/home-background.jpg");
+    background-size: cover;
+    height: 33vw;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 35%);
+    display: flex;
+    justify-content: space-between;
+}
+.scrolling-area{
+    overflow: hidden;
+    direction: rtl;
+    color: white;
+    margin-top: 12vh;
+    margin-left: 3vw;
+    font-family: system-ui;
+     /*height: 48vh;*/
+    width: 29vw;
+    max-width: 450px;
+    background: linear-gradient(to top, rgba(10, 10, 10, 0.6) 0%, rgba(50, 50, 50, 0.5) 80%, rgba(200, 200, 200, 0) 100%);
+}
+.update-container{
+    padding: 10px;
+}
+.all-updates-container{
+    position: relative;
+    animation-duration: 8s;
+    animation-name: slideUp;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+}
+.time-content-container{
+    padding-top: 10px;
+}
+.update-time, .update-content{
+    display: block;
+    padding-right: 15px;
+}
+.update-time{
+    color: darkgrey;
+    font-weight: 600;
+}
+.main-titles{
+    direction: rtl;
+    float: right;
+    padding-top: 13vw;
+    padding-right: 10vw;
+    width: 45%;
+}
+
+.main-title, .second-title, .main-section-title, .second-section-title{
+    font-size: 3.6vw;
+    color: white;
+    font-family: system-ui;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin: 0;
+}
+.second-title, .second-section-title{
+    font-size: 1.4vw;
+    margin-top: 8px;
+    font-weight: 350;
+}
+
+/*------------------ navigate rows -----------------*/
+.Rowcontainer-second{
+    height: 15vw;
+}
+.content-container{
+    margin: 5vw auto 0;
+    width: 85%;
+    border-right: inset #2364db 8px;
+    direction: rtl;
+    height: inherit;
+    display: flex;
+}
+
+.second-titles{
+    padding-right: 5vw;
+    width: 50%;
+}
+
+.main-section-title, .second-section-title{
+    color: #6b705c;
+}
+.button-left {
+    padding: 5px;
+    margin: 30px auto;
+    background: #2364db;
+    height: 4.2vw;
+    width: 4.2vw;
+    border-radius: 50%;
+    transition: all 0.2s linear;
+}
+.button-left::before {
+    content: "";
+    position: absolute;
+    display: block;
+    margin-right: 1vw;
+    margin-top: 1vw;
+    width: 1.5vw;
+    height: 1.5vw;
+    border-right: 0.5vw solid white;
+    border-top: 0.5vw solid white;
+    transform: rotate(225deg);
+    border-radius: 0.3vw;
+}
+.button-left:hover {
+  transform: translate3d(-10px, 0, 0);
+}
+.arrow{
+    margin-top: 2vw;
+    margin-right: 24vw;
+}
+
+
+/*----------- contact us-----------*/
+.contact-container{
+    direction: rtl;
+    margin: 5vw;
+    font-size: 1.4vw;
+    /* color: cadetblue; */
+    font-family: system-ui;
+    font-weight: 400;
+    color: #2364db;
+}
+
+.contact-title{
+    font-size: 3.6vw;
+    color: #2364db;
+    font-weight: 500;
+}
+
+.contact-input{
+    margin-right: 1.3vw;
+}
+
+.msg{
+    margin-top: 1vw;
+    display: flex;
+}
+#text-input{
+    margin-right: 2.8vw;
+    width: 25vw;
+}
+

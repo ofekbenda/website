@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HomePage</title>
+<!--    <link rel="stylesheet" href="{{ url_for('static', filename='css/Home.css') }}">-->
+    <link rel="stylesheet" href="../css/Home.css">
+</head>
+
+<body>
+<div class="topbar" id="topbar">
+    <div class="topbar-stmbols">
+        <img class="padam-symbol" src='./images/padam_symbol.png'/>
+        <img class="padam-symbol" src='./images/intelligence_symbol.png'/>
+    </div>
+    <div class="topbar-title">
+        <h1 id="main-topbar-title">פיקוד דרום</h1>
+        <h2 id="second-topbar-title">ענף מרחב חכם</h2>
+    </div>
+    <div class="topbar-nev">
+        <div class="home-nav-container">
+            <a href="/"><div class="home-nav-link"></div></a>
+        </div>
+
+        <div class="dropdown-nav-container">
+            <a href="#" class="dropdown-nav-link">
+                <div class="dropdown-nav close" id="dropdown-nav">
+                    <div class="row" id="row-1"></div>
+                    <div class="row" id="row-2"></div>
+                    <div class="row" id="row-3"></div>
+                </div>
+
+            </a>
+        </div>
+    </div>
+</div>
+<div class="dropdown-menu-container" id="dropdown-menu-container">
+    <div class="dropdown-menu" id="dropdown-menu">
+        <a href="/">דף בית</a>
+        <a href="updates">תור עדכונים</a>
+        <a href="#">מאתרים ומאגרים</a>
+        <a href="#">מקורות וסג"חים</a>
+        <a href="#">כלים</a>
+    </div>
+</div>
+
+
+<div>
+    <div class="Rowcontainer-main" id="row-container-1">
+        <div class="scrolling-area" id="scrolling-area">
+            <div class="all-updates-container" id="all-updates-container">
+
+                {% for date in main_updates.keys(): %}
+                <div class="update-container">
+                    <h1 class="update-date">{{date}}</h1>
+
+                    {% for time,content in main_updates[date].items(): %}
+                    <div class = "time-content-container">
+                        <span class="update-time">{{time}}</span>
+                        <span class="update-content">{{content}}</span>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+
+       <div class="main-titles">
+            <h1 class="main-title" id="main-title-1">בואו להכיר...</h1>
+            <h2 class="second-title" id="second-title-1">כל מה שרלוונטי ועדכני בתחומי המקורות, הסנסורים, המאגרים, המאתרים והכלים החכמים בזירה</h2>
+        </div>
+
+   </div>
+
+    <div class="Rowcontainer-second" id="row-container-2">
+        <section class="content-container">
+
+            <div class="second-titles">
+                <h1 class="main-section-title" id="main-title-2">בואו להתעדכן</h1>
+                <h2 class="second-section-title" id="second-title-2">
+                    בנושאי חדשות, דאטא וטכנולוגיות באמ"ן ובזירה.
+                    ב<strong>תור העדכונים</strong>
+                    תוכלו לקרוא את כל העדכונים האחרונים מתויגים לפי נושאים עם אפשרות סינון.
+                </h2>
+            </div>
+
+            <div class="arrow">
+                <a href=updates><div class="button-left"></div></a>
+            </div>
+
+        </section>
+    </div>
+
+    <div class="Rowcontainer-second" id="row-container-3">
+        <section class="content-container">
+
+            <div class="second-titles">
+                <h1 class="main-section-title" id="main-title-3">בואו לצפות</h1>
+                <h2 class="second-section-title" id="second-title-3">
+                    באוסף
+                    ה<strong>מאגרים ומאתרים</strong>
+                    בזירה. הסברים אודותיהם ותיעוד בהתאם לסג"חים, כמו כן, סטטיסטיקות וויזואליזציה ודשבורדים חכמים
+                </h2>
+            </div>
+
+            <div class="arrow">
+                <a href=""><div class="button-left"></div></a>
+            </div>
+        </section>
+    </div>
+
+    <div class="Rowcontainer-second" id="row-container-4">
+        <section class="content-container">
+
+            <div class="second-titles">
+                <h1 class="main-section-title" id="main-title-4">בואו ללמוד</h1>
+                <h2 class="second-section-title" id="second-title-4">
+                    על
+                    ה<strong>מקורות וסגח"ים</strong>
+                    בזירה. כל מה שרציתם לדעת ולא העזתם לשאול
+                </h2>
+            </div>
+
+            <div class="arrow">
+                <a href=""><div class="button-left"></div></a>
+            </div>
+        </section>
+    </div>
+
+    <div class="Rowcontainer-second" id="row-container-5">
+        <section class="content-container">
+
+            <div class="second-titles">
+                <h1 class="main-section-title" id="main-title-5">בואו להתנסות</h1>
+                <h2 class="second-section-title" id="second-title-5">
+                    ב<strong>כלים לכר"מות והבנייה</strong>
+                    של הענף בחלוקה לכלים ליעדים, כלים לתמ"א, כלים להתרעה והערכת מצב וכן כלים להבנייה ולכר"מות
+                </h2>
+            </div>
+
+            <div class="arrow">
+                <a href=""><div class="button-left"></div></a>
+            </div>
+        </section>
+    </div>
+
+    <!--    contact    -->
+    <div class="contact-container">
+        <h1 class="contact-title">בואו נדבר!</h1>
+        <p>האדומים שלנו: 123456, 789123</p>
+        <form>
+            <div class="sender">
+               <label>שם השולח:</label>
+                <input class="contact-input" type="text" id="name">
+            </div>
+            <div class="msg">
+               <label>כתוב כאן: </label>
+                <textarea class="contact-input" id="text-input"></textarea>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+    <script src="../javascript/homePage.js"></script>
+    <script src="../javascript/topbarAnimation.js"></script>
+</body>
+
+</html>
