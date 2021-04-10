@@ -1,5 +1,3 @@
-@import "topbarStyle.css";
-
 body{
     background: whitesmoke;
     display: grid;
@@ -126,30 +124,57 @@ body{
 /*----------- contact us-----------*/
 .contact-container{
     direction: rtl;
-    margin: 5vw;
+    margin: 3vw;
     font-size: 1.4vw;
-    /* color: cadetblue; */
     font-family: system-ui;
-    font-weight: 400;
     color: #2364db;
 }
-
+.info-content{
+    margin: 0 20px;
+    color: #6b705c;
+    font-weight: 100;
+}
+.info-title{
+    margin: 5px 0 5px;
+    color: #6b705c;
+}
+.contact-content-container{
+    display: flex;
+    justify-content: space-evenly;
+}
 .contact-title{
     font-size: 3.6vw;
     color: #2364db;
     font-weight: 500;
+    margin-right: 3.8vw;
 }
-
 .contact-input{
     margin-right: 1.3vw;
+    border: 3px solid #cccccc;
+    font-family: system-ui;
+    width: 25vw;
+    height: 1.5vw;
 }
-
 .msg{
     margin-top: 1vw;
     display: flex;
 }
 #text-input{
-    margin-right: 2.8vw;
+    margin-right: 4.4vw;
     width: 25vw;
+    height: 5vw;
+}
+.submit-btn{
+    background: #2364db;
+    color: white;
+    font-size: 23px;
+    font-family: system-ui;
+    border: none;
+    cursor: pointer;
+    width: 34vw;
+    margin-top: 1vw;
+}
+.submit-btn:hover{
+    background-color: #236493;
 }
 

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>updates</title>
+    <link rel="stylesheet" href="../css/topbarStyle.css">
     <link rel="stylesheet" href="../css/Updates.css">
 <!--    <script src="{{ url_for('static', filename= 'javascript/updates.js') }}"></script>-->
 </head>
@@ -37,7 +38,7 @@
     <div class="dropdown-menu" id="dropdown-menu">
         <a href="/">דף בית</a>
         <a href="updates">תור עדכונים</a>
-        <a href="#">מאתרים ומאגרים</a>
+        <a href="dataTables">מאתרים ומאגרים</a>
         <a href="#">מקורות וסג"חים</a>
         <a href="#">כלים</a>
     </div>
@@ -56,7 +57,7 @@
     <!-- Updates Components -->
     <div id="all-mail-container">
     {% for i,row in mails.iterrows(): %}
-        {% with title, date, author, gist, tags, path = row %}
+        {% with path, title, date, author, gist, tags  = row %}
         <div class="mail_container" id = "mail_container_{{i}}">
             <a href="mails/{{path}}" target="_blank" >
              <br>

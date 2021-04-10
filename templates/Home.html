@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>HomePage</title>
 <!--    <link rel="stylesheet" href="{{ url_for('static', filename='css/Home.css') }}">-->
+    <link rel="stylesheet" href="../css/topbarStyle.css">
     <link rel="stylesheet" href="../css/Home.css">
 </head>
 
@@ -38,7 +39,7 @@
     <div class="dropdown-menu" id="dropdown-menu">
         <a href="/">דף בית</a>
         <a href="updates">תור עדכונים</a>
-        <a href="#">מאתרים ומאגרים</a>
+        <a href="dataTables">מאתרים ומאגרים</a>
         <a href="#">מקורות וסג"חים</a>
         <a href="#">כלים</a>
     </div>
@@ -105,7 +106,7 @@
             </div>
 
             <div class="arrow">
-                <a href=""><div class="button-left"></div></a>
+                <a href=dataTables><div class="button-left"></div></a>
             </div>
         </section>
     </div>
@@ -148,18 +149,31 @@
     <!--    contact    -->
     <div class="contact-container">
         <h1 class="contact-title">בואו נדבר!</h1>
-        <p>האדומים שלנו: 123456, 789123</p>
-        <form>
-            <div class="sender">
-               <label>שם השולח:</label>
-                <input class="contact-input" type="text" id="name">
+        <div class = "contact-content-container">
+            <div class="info-container">
+                <p class = "info-title">האדומים שלנו: </p>
+                <p class = "info-content">123456, 789123</p>
+<!--                <p class = "info-content">789123</p>-->
+                <p class = "info-title">המיילים שלנו: </p>
+                <p class = "info-content">daniel_harari@gmail.com</p>
+                <p class = "info-content">ofekbenda@gmail.com</p>
             </div>
-            <div class="msg">
-               <label>כתוב כאן: </label>
-                <textarea class="contact-input" id="text-input"></textarea>
+            <div class="form-container">
+                <form>
+                    <div class="sender">
+                        <label>שם השולח:</label>
+                        <input class="contact-input" type="text" id="name">
+                    </div>
+                    <div class="msg">
+                        <label>הודעה:</label>
+                        <textarea class="contact-input" id="text-input" placeholder="כתוב כאן..."></textarea>
+                    </div>
+                    <div class="submit-container">
+                        <input class="submit-btn" type="submit" value="שלח">
+                    </div>
+                </form>
             </div>
-
-        </form>
+        </div>
     </div>
 </div>
 

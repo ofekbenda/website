@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>מאתרים ומאגרים</title>
     <link rel="stylesheet" href="../css/topbarStyle.css">
-    <link rel="stylesheet" href="../css/DataTables.css">
+    <link rel="stylesheet" href="../css/DataTables-1.css">
 <!--        <link rel="stylesheet" href="../css/Home.css">-->
 
 </head>
@@ -65,35 +65,40 @@
         {% endfor %}
     </datalist>
 
-    <div class="content-container" id="content-container">
-        <div id="info-frame-container">
-            <div id="default-info-container">
-                <h1>מאגר מידע</h1>
-                <div class="default-info">
-                    <p><strong>מאגר מידע</strong>
-                    הוא אוסף מסודר של נתונים בתחום מסוים, המאפשר אחזור נתונים אלה לשם הפקת המידע הנחוץ למשתמש.
-                    <br>
-                    הדרך הנפוצה כיום לניהול מאגר מידע מורכב היא אחסון הנתונים בבסיס נתונים, ועדכונם ואחזורם באמצעות מערכת מידע מתאימה. קודם לפיתוח טכנולוגיית בסיסי הנתונים אוחסנו מאגרי מידע ממוחשבים בקבצים (לגישה סדרתית או גישה ישירה). לניהול מאגר מידע פשוט ניתן להשתמש בגיליון אלקטרוני. לפני התפתחות המחשוב אוחסנו מאגרי מידע בכרטיס מנוקבים, בכרטסות ובאמצעים נוספים.
-                    <br><br><strong><u>
-                    דוגמאות:
-                    <br></strong></u>
-                    <ul>
-                        <li>מרשם האוכלוסין הוא מאגר מידע המכיל נתונים על כל תושביה ואזרחיה של המדינה.</li><br>
-                        <li>קטלוג של ספרייה הוא מאגר מידע המכיל את רשימת הפריטים הנמצאים בספרייה, ומאפשר איתור כל פריט. </li>
-                    </ul>
-                <br>
-                מאגר מידע מאפשר קבלת מידע על כל פריט שבו (למשל: קבלת פרטיו של אזרח מסוים), קבלת רשימה של פריטים המקיימים תנאי מסוים (למשל: רשימת כל האזרחים שהגיעו לגיל מאה שנה) ועיבוד סטטיסטי של הנתונים (למשל: התפלגות האוכלוסייה לפי שנתונים).
-                </p>
-                </div>
-            </div>
-        </div>
-
-        <div id="dash-frame-container">
-            <div id="default-dash-container">
-                <img src="../images/dash2.png">
-            </div>
+    <div class="info-title-container" id="info-title-container">
+        <h1 class="info-title">הצג מידע</h1>
+        <div class="arrow" id="info-arrow"></div>
+    </div>
+    <div id="info-frame-container">
+        <div id="default-info-container">
+            <p><strong>מאגר מידע</strong>
+            הוא אוסף מסודר של נתונים בתחום מסוים, המאפשר אחזור נתונים אלה לשם הפקת המידע הנחוץ למשתמש.
+            <br>
+            הדרך הנפוצה כיום לניהול מאגר מידע מורכב היא אחסון הנתונים בבסיס נתונים, ועדכונם ואחזורם באמצעות מערכת מידע מתאימה. קודם לפיתוח טכנולוגיית בסיסי הנתונים אוחסנו מאגרי מידע ממוחשבים בקבצים (לגישה סדרתית או גישה ישירה). לניהול מאגר מידע פשוט ניתן להשתמש בגיליון אלקטרוני. לפני התפתחות המחשוב אוחסנו מאגרי מידע בכרטיס מנוקבים, בכרטסות ובאמצעים נוספים.
+            <br><br><strong><u>
+            דוגמאות:
+            <br></strong></u>
+            <ul>
+                <li>מרשם האוכלוסין הוא מאגר מידע המכיל נתונים על כל תושביה ואזרחיה של המדינה.</li><br>
+                <li>קטלוג של ספרייה הוא מאגר מידע המכיל את רשימת הפריטים הנמצאים בספרייה, ומאפשר איתור כל פריט. </li>
+            </ul>
+            <br>
+            מאגר מידע מאפשר קבלת מידע על כל פריט שבו (למשל: קבלת פרטיו של אזרח מסוים), קבלת רשימה של פריטים המקיימים תנאי מסוים (למשל: רשימת כל האזרחים שהגיעו לגיל מאה שנה) ועיבוד סטטיסטי של הנתונים (למשל: התפלגות האוכלוסייה לפי שנתונים).
+            </p>
         </div>
     </div>
+
+    <br>
+
+    <div class="dash-title-container" id="dash-title-container">
+        <h1 class="dash-title">צפה בדשבורד</h1>
+    </div>
+    <div id="dash-frame-container">
+        <div id="default-dash-container">
+                <img src="../images/dash2.png">
+            </div>
+    </div>
+
 </div>
 
 <script src="../javascript/http_code.jquery.com_jquery-3.5.1.js"></script>
@@ -104,6 +109,7 @@
     iframe_info.setAttribute("id", "iframe-info");
     iframe_dash.setAttribute("id", "iframe-dash");
 
+    //load information and dashboard then selected in droplist
     function get_html() {
 
         let info_div = document.getElementById("info-frame-container");
@@ -140,8 +146,16 @@
         // iframe_dash.onload = function (){document.getElementById("dash-frame-container").style.animation=""};
 
     }
-
     selected.onchange = function (){get_html()};
+
+    //show info if "info-title" clicked
+    let info = document.getElementById("info-title-container");
+    info.onclick= function (){$("#info-frame-container").slideToggle();};
+
+    //show dashboard if "dash-title" clicked
+    let dash = document.getElementById("dash-title-container");
+    dash.onclick= function (){$("#dash-frame-container").slideToggle();};
+
 </script>
 <script src="../javascript/topbarAnimation.js"></script>
 </body>
