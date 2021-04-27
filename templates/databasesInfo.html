@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>מאתרים ומאגרים</title>
     <link rel="stylesheet" href="../css/topbarStyle.css">
-    <link rel="stylesheet" href="../css/DataTables-1.css">
-<!--        <link rel="stylesheet" href="../css/Home.css">-->
+    <link rel="stylesheet" href="../css/databasesInfo.css">
+    <!--        <link rel="stylesheet" href="../css/Home.css">-->
 
 </head>
 <body>
@@ -40,9 +40,9 @@
     <div class="dropdown-menu" id="dropdown-menu">
         <a href="/">דף בית</a>
         <a href="updates">תור עדכונים</a>
-        <a href="dataTables">מאתרים ומאגרים</a>
-        <a href="#">מקורות וסג"חים</a>
-        <a href="#">כלים</a>
+        <a href="databasesInfo">מאתרים ומאגרים</a>
+        <a href="sourcesInfo">מקורות וסג"חים</a>
+        <a href="tools">כלים</a>
     </div>
 </div>
 
@@ -52,12 +52,12 @@
     <div class="main-titles">
         <h1 class="main-title">מאגרים ומאתרים</h1>
         <h2 class="second-title">חפשו וקראו על המאגרים והמאתרים שקיימים בזירה
-            <input list="dataTables-list" name="dataTables-list" id="input-dataTables-list" placeholder="   הקלידו כאן...">
+            <input list="databasesInfo-list" name="databasesInfo-list" id="input-databasesInfo-list" placeholder="   הקלידו כאן...">
         </h2>
 
     </div>
 
-    <datalist id="dataTables-list">
+    <datalist id="databasesInfo-list">
         {% set ind = namespace(i=0) %}
         {% for data_name in data[0]: %}
             <option value="{{data_name}}" class="{{data_name}}" id="{{ind.i}}"></option>
@@ -76,12 +76,25 @@
             <br>
             הדרך הנפוצה כיום לניהול מאגר מידע מורכב היא אחסון הנתונים בבסיס נתונים, ועדכונם ואחזורם באמצעות מערכת מידע מתאימה. קודם לפיתוח טכנולוגיית בסיסי הנתונים אוחסנו מאגרי מידע ממוחשבים בקבצים (לגישה סדרתית או גישה ישירה). לניהול מאגר מידע פשוט ניתן להשתמש בגיליון אלקטרוני. לפני התפתחות המחשוב אוחסנו מאגרי מידע בכרטיס מנוקבים, בכרטסות ובאמצעים נוספים.
             <br><br><strong><u>
-            דוגמאות:
+            אוסף מאגרי המידע והמאתרים:
             <br></strong></u>
-            <ul>
-                <li>מרשם האוכלוסין הוא מאגר מידע המכיל נתונים על כל תושביה ואזרחיה של המדינה.</li><br>
-                <li>קטלוג של ספרייה הוא מאגר מידע המכיל את רשימת הפריטים הנמצאים בספרייה, ומאפשר איתור כל פריט. </li>
-            </ul>
+            <ol>
+                {% for data_name in data[0]: %}
+                    <li>{{data_name}}</li>
+                                <li>{{data_name}}</li>
+                    <li>{{data_name}}</li>
+                    <li>{{data_name}}</li>
+                    <li>{{data_name}}</li>
+                    <li>{{data_name}}</li>
+                    <li>{{data_name}}</li>
+                    <li>{{data_name}}</li>
+                    <li>{{data_name}}</li>
+                    <li>{{data_name}}</li>
+                    <li>{{data_name}}</li>
+
+                {% endfor %}
+            </ol>
+
             <br>
             מאגר מידע מאפשר קבלת מידע על כל פריט שבו (למשל: קבלת פרטיו של אזרח מסוים), קבלת רשימה של פריטים המקיימים תנאי מסוים (למשל: רשימת כל האזרחים שהגיעו לגיל מאה שנה) ועיבוד סטטיסטי של הנתונים (למשל: התפלגות האוכלוסייה לפי שנתונים).
             </p>
@@ -92,6 +105,7 @@
 
     <div class="dash-title-container" id="dash-title-container">
         <h1 class="dash-title">צפה בדשבורד</h1>
+        <div class="arrow" id="dash-arrow"></div>
     </div>
     <div id="dash-frame-container">
         <div id="default-dash-container">
@@ -103,7 +117,7 @@
 
 <script src="../javascript/http_code.jquery.com_jquery-3.5.1.js"></script>
 <script>
-    let selected = document.getElementById("input-dataTables-list");
+    let selected = document.getElementById("input-databasesInfo-list");
     let iframe_info = document.createElement('iframe');
     let iframe_dash = document.createElement('iframe');
     iframe_info.setAttribute("id", "iframe-info");
@@ -112,52 +126,57 @@
     //load information and dashboard then selected in droplist
     function get_html() {
 
-        let info_div = document.getElementById("info-frame-container");
-        let dash_div = document.getElementById("dash-frame-container");
+    let info_div = document.getElementById("info-frame-container");
+    let dash_div = document.getElementById("dash-frame-container");
 
-        //remove default info and dash
-        $("#default-info-container").fadeOut();
-        $("#default-dash-container").fadeOut();
+    //remove default info and dash
+    $("#default-info-container").fadeOut();
+    $("#default-dash-container").fadeOut();
 
-        //add load animation
-        info_div.style.backgroundImage="url('../images/loader.gif')";
-        dash_div.style.backgroundImage="url('../images/loader.gif')";
+    //add load animation
+    info_div.style.backgroundImage="url('../images/loader.gif')";
+    dash_div.style.backgroundImage="url('../images/loader.gif')";
 
-        // info_div.style.animation="fading 1.5s infinite";
-        // dash_div.style.animation="fading 1.5s infinite";
+    let ind = document.getElementsByClassName(selected.value)[0].id; //get ind of pages to load
 
-        let ind = document.getElementsByClassName(selected.value)[0].id; //get ind of pages to load
+    //parsing info and dashboards array
+    let url_arr = {{ data[1] | safe | replace(" ",",") }}
+    let dash_arr = {{ data[2] | safe | replace(" ",",") }}
 
-        //parsing info and dashboards array
-        let url_arr = {{ data[1]|safe|replace(" ",",") }}
+    //load url to iframes
+    iframe_info.src = url_arr[ind]+"#firstHeading";
+    iframe_dash.src = dash_arr[ind];
 
-        let dash_arr = {{ data[2]|safe|replace(" ",",") }}
-
-        //load url to iframes
-        iframe_info.src = url_arr[ind]+"#firstHeading";
-        iframe_dash.src = dash_arr[ind];
-
-        //link the iframe element to his container
-        info_div.appendChild(iframe_info);
-        dash_div.appendChild(iframe_dash);
-
-        //stop loading Animation when iframes ready
-        // iframe_info.onload = function (){document.getElementById("info-frame-container").style.animation=""};
-        // iframe_dash.onload = function (){document.getElementById("dash-frame-container").style.animation=""};
-
+    //link the iframe element to his container
+    info_div.appendChild(iframe_info);
+    dash_div.appendChild(iframe_dash);
     }
     selected.onchange = function (){get_html()};
 
     //show info if "info-title" clicked
     let info = document.getElementById("info-title-container");
-    info.onclick= function (){$("#info-frame-container").slideToggle();};
+    info.onclick= function (){
+        $("#info-frame-container").slideToggle();
+        //change arrow direction
+        let info_arrow = document.getElementById("info-arrow");
+        (info_arrow.style.transform === "" || info_arrow.style.transform === "rotateX(0deg)") ?
+        info_arrow.style.transform ="rotateX(180deg)": info_arrow.style.transform ="rotateX(0deg)";
+
+    };
 
     //show dashboard if "dash-title" clicked
     let dash = document.getElementById("dash-title-container");
-    dash.onclick= function (){$("#dash-frame-container").slideToggle();};
-
+    dash.onclick= function (){
+        $("#dash-frame-container").slideToggle();
+        //change arrow direction
+        let dash_arrow = document.getElementById("dash-arrow");
+        (dash_arrow.style.transform === "" || dash_arrow.style.transform === "rotateX(0deg)") ?
+        dash_arrow.style.transform ="rotateX(180deg)": dash_arrow.style.transform ="rotateX(0deg)";
+    };
 </script>
+<script src="../javascript/databasesInfo.js"></script>
 <script src="../javascript/topbarAnimation.js"></script>
+
 </body>
 
 </html>

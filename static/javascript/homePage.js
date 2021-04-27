@@ -1,16 +1,3 @@
-// When the user scrolls down 600 from the top of the document, change topbar style
-window.onscroll = function() {scrollFunction()};
-function scrollFunction() {
-    let topbar_element = document.getElementById("topbar");
-    if ((document.body.scrollTop > 600 || document.documentElement.scrollTop > 600)) {
-        document.getElementById("topbar").style.background = "linear-gradient(to bottom, #f0f0f0 0%, rgba(255, 255, 255, 0.9) 80%, white 100%)";
-
-    } else {
-        document.getElementById("topbar").style.background = "linear-gradient(to bottom, #f0f0f0 0%, rgba(255, 255, 255, 0.5) 80%, rgba(255, 255, 255, 0) 100%)";
-    }
-}
-
-
 /*The function adds the animation slideUp for the scrolling area according to the current window size.
 In addition - calculate and update duration animation proportionately to num of updates and window size.
  */

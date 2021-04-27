@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>יעדים</title>
+    <link rel="stylesheet" href="../css/topbarStyle.css">
+    <link rel="stylesheet" href="../css/toolsSidebar.css">
+    <link rel="stylesheet" href="../css/toolStyle.css">
+    <style>
+        .main-titles{
+            background-image: url("../images/target.png");
+        }
+        #tool-1{
+            background-image: url("../images/lab-tool1.png");
+        }
+        #tool-2{
+            background-image: url("../images/lab-tool2.png");
+        }
+    </style>
+</head>
+<body style="--colori: #8c001a">
+<!-- topbar -->
+<div class="topbar" id="topbar">
+    <div class="topbar-stmbols">
+        <img class="padam-symbol" src='./images/padam_symbol.png'/>
+        <img class="padam-symbol" src='./images/intelligence_symbol.png'/>
+    </div>
+    <div class="topbar-title">
+        <h1 id="main-topbar-title">פיקוד דרום</h1>
+        <h2 id="second-topbar-title">ענף מרחב חכם</h2>
+    </div>
+    <div class="topbar-nev">
+        <div class="home-nav-container">
+            <a href="/"><div class="home-nav-link"></div></a>
+        </div>
+        <div class="dropdown-nav-container">
+            <a href="#" class="dropdown-nav-link">
+                <div class="dropdown-nav close" id="dropdown-nav">
+                    <div class="row" id="row-1"></div>
+                    <div class="row" id="row-2"></div>
+                    <div class="row" id="row-3"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="dropdown-menu-container" id="dropdown-menu-container">
+    <div class="dropdown-menu" id="dropdown-menu">
+        <a href="/">דף בית</a>
+        <a href="updates">תור עדכונים</a>
+        <a href="databasesInfo">מאתרים ומאגרים</a>
+        <a href="sourcesInfo">מקורות וסג"חים</a>
+        <a href="tools">כלים</a>
+    </div>
+</div>
+<!-- end topbar -->
+
+<div class="page-container">
+<!--    sidebar     -->
+    <div class="side-bar-container">
+        <div class="sidebar-content-container">
+        <h2 class="sidebar-title">מידע וידע</h2>
+        <hr>
+        <ul class="main-list">
+            <li class="main-item">
+                <div class="selected-container">
+                    <a class="selected" href="toolsProcessing">
+                        <img class="sidebar-icon" src="../images/engineering.png">
+                        עיבוד והנגשה
+                    </a>
+                    <div class="arrow" id="arrow-0"></div>
+                </div>
+                <div class="second-list-container close" id="second-list-0">
+                    <ul class="second-list">
+                        <li class="second-item"><a href="toolsProcessing">מידע כללי</a></li>
+                        <li class="second-item"><a href="#">כלי 1</a></li>
+                        <li class="second-item"><a href="#">כלי 2</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="main-item">
+                <div class="selected-container">
+                    <a class="selected" href="toolsLab">
+                        <img class="sidebar-icon" src="../images/data-storage.png">
+                        מעבדת דאטא
+                    </a>
+                    <div class="arrow" id="arrow-1"></div>
+                </div>
+                <div class="second-list-container close" id="second-list-1">
+                    <ul class="second-list">
+                        <li class="second-item"><a href="toolsLab">מידע כללי</a></li>
+                        <li class="second-item"><a href="#">כלי 1</a></li>
+                        <li class="second-item"><a href="#">כלי 2</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="main-item">
+                <div class="selected-container">
+                    <a class="selected" href="toolsGeography">
+                        <img class="sidebar-icon" src="../images/map.png">
+                        גיאוגרפיה
+                    </a>
+                    <div class="arrow" id="arrow-2"></div>
+                </div>
+                <div class="second-list-container close" id="second-list-2">
+                    <ul class="second-list">
+                        <li class="second-item"><a href="toolsGeography">מידע כללי</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
+        <h2 class="sidebar-title">כרמייה</h2>
+        <hr>
+        <ul class="main-list">
+            <li class="main-item">
+                <div class="selected-container">
+                    <a class="selected" href="toolsDevelopment">
+                        <img class="sidebar-icon" src="../images/idea.png">
+                        פיתוח
+                    </a>
+                    <div class="arrow" id="arrow-3"></div>
+                </div>
+                <div class="second-list-container close" id="second-list-3">
+                    <ul class="second-list">
+                        <li class="second-item"><a href="toolsDevelopment">מידע כללי</a></li>
+                        <li class="second-item"><a href="#">כלי 1</a></li>
+                        <li class="second-item"><a href="#">כלי 2</a></li>
+                        <li class="second-item"><a href="#">כלי 3</a></li>
+                        <li class="second-item"><a href="#">כלי 4</a></li>
+                        <li class="second-item"><a href="#">כלי 5</a></li>
+                        <li class="second-item"><a href="#">כלי 6</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="main-item">
+                <div class="selected-container">
+                    <a class="selected" href="toolsTargets">
+                        <img class="sidebar-icon" src="../images/target.png">
+                        יעדים
+                    </a>
+                    <div class="arrow" id="arrow-4"></div>
+                </div>
+                <div class="second-list-container close" id="second-list-4">
+                    <ul class="second-list">
+                        <li class="second-item"  style="background-color: #5465ff; color: white"><a href="toolsTargets">מידע כללי</a></li>
+                        <li class="second-item"><a href="#">כלי 1</a></li>
+                        <li class="second-item"><a href="#">כלי 2</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="main-item">
+                <div class="selected-container">
+                    <a class="selected" href="toolsActivity">
+                        <img class="sidebar-icon" src="../images/attention.png">
+                        פעילות והתרעה
+                    </a>
+                    <div class="arrow" id="arrow-5"></div>
+                </div>
+                <div class="second-list-container close" id="second-list-5">
+                    <ul class="second-list">
+                        <li class="second-item"><a href="toolsActivity">מידע כללי</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
+        <h2 class="sidebar-title">מקורות וסנסורים</h2>
+        <hr>
+        <ul class="main-list">
+            <li class="main-item">
+                <div class="selected-container">
+                    <a class="selected" href="toolsSensors">
+                        <img class="sidebar-icon" src="../images/briefing.png">
+                        פרוייקטים
+                    </a>
+                    <div class="arrow" id="arrow-6"></div>
+                </div>
+                <div class="second-list-container close" id="second-list-6">
+                    <ul class="second-list">
+                        <li class="second-item"><a href="toolsSensors">מידע כללי</a></li>
+                        <li class="second-item"><a href="#">כלי 1</a></li>
+                        <li class="second-item"><a href="#">כלי 2</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+    </div>
+<!--    end sidebar -->
+    <div class="content-container">
+        <div class="main-titles">
+                <h1 class="main-title">יעדים</h1>
+                <h2 class="second-title">הסבר על המדור הסבר על המדור הסבר על המדור הסבר על המדור הסבר על המדור הסבר על המדור הסבר על המדור הסבר על המדור הסבר על המדור הסבר על המדור הסבר על המדור הסבר על המדור הסבר על המדור הסבר על המדור הסבר על המדור הסבר על המדור הסבר על המדור </h2>
+        </div>
+
+        <div class="second-titles">
+            <h1 class="main-title">צוות ודרכי התקשרות</h1>
+            <h2 class="second-title">אע"צית אופק בן דוד       ---------------------          066-789</h2>
+            <h2 class="second-title">רש"צ דניאל הררי       ---------------------          066-788</h2>
+        </div>
+
+        <div class="second-titles">
+            <h1 class="main-title">הכלים שלנו</h1>
+            <div class="tools-container">
+
+                <div class="tool-container">
+                    <div class="tool" id="tool-1">
+                        כלי 1
+                    </div>
+                    <span>מיצוי ועיבוד נתונים לפי פרמטרים שונים</span>
+                </div>
+
+                <div class="tool-container">
+                    <div class="tool" id="tool-2">
+                        כלי 2
+                    </div>
+                    <span>מיצוי ועיבוד נתונים לפי פרמטרים שונים</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="../javascript/http_code.jquery.com_jquery-3.5.1.js"></script>
+<script src="../javascript/topbarAnimation.js"></script>
+<script src="../javascript/sidebarTools.js"></script>
+<script>
+
+    //mark selected section in sidebar on load
+    window.onload = function () {extend_second_list(arrows[4])};
+</script>
+</body>
+</html>

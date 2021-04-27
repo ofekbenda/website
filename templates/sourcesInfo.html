@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>מקורות וסג"חים</title>
+    <link rel="stylesheet" href="../css/topbarStyle.css">
+    <link rel="stylesheet" href="../css/sourcesInfo.css">
+
+</head>
+<body>
+
+<!-- topbar -->
+<div class="topbar" id="topbar">
+    <div class="topbar-stmbols">
+        <img class="padam-symbol" src='./images/padam_symbol.png'/>
+        <img class="padam-symbol" src='./images/intelligence_symbol.png'/>
+    </div>
+    <div class="topbar-title">
+        <h1 id="main-topbar-title">פיקוד דרום</h1>
+        <h2 id="second-topbar-title">ענף מרחב חכם</h2>
+    </div>
+    <div class="topbar-nev">
+        <div class="home-nav-container">
+            <a href="/"><div class="home-nav-link"></div></a>
+        </div>
+        <div class="dropdown-nav-container">
+            <a href="#" class="dropdown-nav-link">
+                <div class="dropdown-nav close" id="dropdown-nav">
+                    <div class="row" id="row-1"></div>
+                    <div class="row" id="row-2"></div>
+                    <div class="row" id="row-3"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="dropdown-menu-container" id="dropdown-menu-container">
+    <div class="dropdown-menu" id="dropdown-menu">
+        <a href="/">דף בית</a>
+        <a href="updates">תור עדכונים</a>
+        <a href="databasesInfo">מאתרים ומאגרים</a>
+        <a href="sourcesInfo">מקורות וסג"חים</a>
+        <a href="#">כלים</a>
+    </div>
+</div>
+<!-- end topbar -->
+
+<div id="all-page-container">
+    <div class= "scroll-up" id="scroll-up">
+        <div class="button-top" id="button-top"></div>
+    </div>
+
+    <div class="page-content-container">
+        <div class="main-titles">
+            <h1 class="main-title">מקורות וסג"חים</h1>
+            <h2 class="second-title">יודעים מה אתם מחפשים?
+            <input list="sources-list" name="sources-list" id="input-sources-list" placeholder="   הקלידו כאן...">
+            </h2>
+        </div>
+
+        <datalist id="sources-list">
+            <option value="סיגינט" class="סיגינט"></option>
+            <option value="יומינט" class="יומינט"></option>
+            <option value="חזותי" class="חזותי"></option>
+
+            {% set ind = namespace(i=0) %}
+            {% for data_name,url in data: %}
+                <option value="{{data_name}}" class="{{data_name}}" id="{{ind.i}}"></option>
+            {% set ind.i = ind.i + 1 %}
+            {% endfor %}
+        </datalist>
+
+    <!--    for sources TYPE information   -->
+<!--        <h1 class="all-type-title">סוגי חומרים</h1>-->
+            <div class="type-container">
+                <div class="type-title-container" id="sigint-title">
+                    <h1 class="type-title" id="סיגינט">סיגינט</h1>
+    <!--                <div class="type-arrow arrow"></div>-->
+                </div>
+                <div class="type-info-container">
+                    <img class="source-type-img" id="sigint-img" src="../images/sigint.jpg" align="left"/>
+                    <p>
+                           <strong>מודיעין אותות</strong>
+                           או סיגינט (באנגלית: SIGINT, ראשי תיבות של: Signals Intelligence) הוא ענף של מודיעין צבאי העוסק באיסוף מידע בעל חשיבות על ידי יירוט תשדורות של אותות אלקטרוניים, והפקת מידע מודיעיני מתוכן.<br>
+     לצורך איסוף מודיעין האותות יש חשיבות הן להאזנה לתקשורת בין אנשים ("קומינט"; באנגלית: COMINT, ראשי תיבות של: "Communications Intelligence"),
+                           <strong>
+                           והן לקליטת אותות אלקטרוניים המופקים על ידי מכונות
+                           </strong>>
+                           ("אלינט"; באנגלית: ELINT, ראשי תיבות של: "Electronic Intelligence"), ובעצם לעירוב בין שניהם. <br>כיוון שמידע רגיש מוצפן בדרך כלל, עבודת מודיעין אותות כוללת לרוב גם מומחי פיענוח צפנים.
+                           <br><br>
+                           ניתוח תעבורת אותות - מחקר לזיהוי מקור האותות, נמען האותות, וכמות האותות הנשלחים - עשוי להניב מידע רב-חשיבות כשלעצמו, גם כשתוכן האותות עצמו לא ניתן לפיענוח.
+                           <br>
+    העיסוק ביירוט הודעות מוצפנות ופיענוחן - עתיק כנראה כמעט כימי הכתב. יירוט אותות אלקטרוניים נעשה כבר ב-1900, בימי מלחמת הבורים: לאחר שהבורים תפסו מכשירי רדיו בריטיים, ומכיוון שהבריטים היו היחידים ששידרו אותות רדיו באותה תקופה, לא היה קשה לאתר וליירט את האותות הללו.
+                           <br><br>
+    יחידות סיגינט הן לרוב עתירות כוח אדם. הסוכנות לביטחון לאומי של ארצות הברית מעסיקה עשרות אלפי עובדים ונחשבת לארגון ביון הסיגינט הגדול ביותר ולמעסיקה הגדולה ביותר בעולם של מתמטיקאים. בישראל, יחידה 8200 נחשבת ליחידה הגדולה ביותר בצה"ל.
+                           <br>
+                           עד שנת 2003 הסוכנות הפדרלית לתקשורת מיוחדת ומודיעין של רוסיה, שעסקה במודיעין אותות, הייתה סוכנות הביון הגדולה ביותר ברוסיה, וכיום איסוף מודיעין אותות מתחלק בין המחלקות השונות של שלוש סוכנויות הביון הגדולות באותה מדינה: הסו"ר, הפס"ב והגר"ו.
+                    </p>
+                </div>
+            </div>
+            <div class="type-container">
+                <div class="type-title-container">
+                    <h1 class="type-title" id="יומינט">יומינט</h1>
+                </div>
+                <div class="type-info-container">
+                    <img class="source-type-img" id="humint-img" src="../images/humint.jpg" align="left"/>
+                    <p>
+                        <strong>
+                        מודיעין אנושי
+                        </strong>
+                        או יומינט (מאנגלית: HUMINT, קיצור של HUMan INTelligence) הוא שיטת איסוף מודיעין ((אנ')) הוותיקה והחשובה ביותר. השיטה נולדה מתחום הריגול והתפתחה למגוון שיטות. תחום זה נחשב לרגיש ולבעייתי ביותר מבין כל תחומי המקורות, וההפעלה בו מורכבת ביותר. עם זאת, התמורה שמקבלים מהפעלה נכונה של יומינט היא עצומה ועומק החדירה שאפשר להשיג הוא כמעט בלתי מוגבל.
+                        <br><br>
+                        לכן, למרות הבעייתיות והסיכון, ארגוני ביון רבים בעולם משתמשים בטכניקה זו אימתי שאפשר. ארגוני הביון למיניהם כמו המוסד, ה-CIA, ואגפים גדולים בשב"כ וב-FBI למעשה מהווים גופי יומינט בעיקר פעולתם מתוקף תפקידם כחלק משרשרת איסוף המודיעין. ביומינט עיקר איסוף המודיעין נעשה
+                        <strong>
+                        באמצעות קשרים בינאישיים
+                        </strong>
+                        לעומת שיטות איסוף טכנולוגיות כמו סיגינט (מודיעין אותות), ויזינט (מודיעין חזותי) ואוסינט (מודיעין מקורות גלויים).
+                        <br>
+                        עם התקדמות הטכנולוגיה, והשימוש בטכנולוגיה גובר והולך השילוב של שיטות איסוף יומינטים וטכנולוגיים הנקראים גם Sighumint.
+                        <br>
+        מודיעין צבאי ואיסוף מודיעיני צבאי מהווה את עיקר הפעילות המודיעינית של ישראל, אך בשאר מדינות העולם הוא חלק קטן מהפעילות וכולל בעיקר מודיעין מדיני, אסטרטגי, כלכלי, עסקי וטכנולוגי.
+                        <br><br>
+                        <strong>
+                            שיטות של איסוף מידע באמצעות מודיעין אנושי:
+                        </strong>
+                            <br>
+        ריגול - הפעלה של מרגלים שתולים וגיוס סוכנים, מודיעים (אנ') "נייטרלים" מקרב הצד השני ושימוש בנכסים מודיעיניים (אנ').
+    <br>
+                        חקירות - חקירת שבויים על מנת לדלות מהם מידע. לפי אמנת ז'נבה, אסור לחקור שבויי מלחמה, אך מדינות בהחלט משתמשות בחקירה כנגד מחבלים וטרוריסטים. כמו כן חלק נכבד מהמדינות, בעיקר הדיקטטוריות, מתעלמות מהאיסור בתירוצים שונים ומשונים (למשל במלחמת וייטנאם, טענה צפון וייטנאם כי הטייסים האמריקאים הם פושעי מלחמה ולא שבויי מלחמה ולכן האיסור לא חל עליהם) וחוקרות את השבויים, לעיתים תוך שימוש בעינויים.
+                        <br><br>
+        דוגמה ליומינט הוא המרגל הישראלי אלי כהן שהופעל בדמשק ואסף מידע על ביצורי הסורים ברמת הגולן. מנגד, ישראל בר היה מרגל סובייטי שנהפך לאחד האנשים הקרובים ביותר לדוד בן-גוריון.
+                        דוגמה נוספת היא שירות הביטחון הכללי (השב"כ) אשר התמחה בהפעלת סוכנים, מודיעים וסייענים - דבר שהתבטא במודיעין רב ואיכותי שאפשר סיכול של מספר רב של פיגועים במהלך האינתיפאדה השנייה.
+                    </p>
+                </div>
+            </div>
+            <div class="type-container">
+                <div class="type-title-container">
+                    <h1 class="type-title" id="חזותי">חזותי</h1>
+                </div>
+                <div class="type-info-container">
+                    <img class="source-type-img" id="visint-img" src="../images/visint.jpg" align="left"/>
+                    <p>
+                        <strong>
+                        מודיעין חזותי,
+                        </strong>
+                        או ויזינט (VISINT, קיצור של Visual Intelligence), הוא מודיעין המתמקד במידע חזותי.
+                        <br>
+                        <strong>
+    מקורות נפוצים למודיעין חזותי הם:
+                        </strong>
+                        <br>
+    תצלומים קרקעיים.
+                        <br>
+    תצפיות בידי חיילים (כפי שמבוצעת על ידי חיל האיסוף הקרבי בצה"ל, לדוגמה).
+                        <br>
+    תצפיות בעומק עורף האויב בידי יחידות סיור עמוק (Deep Reconnaissance). יחידות אלה הן יחידות עילית המאומנות בריגול, הסוואה והישרדות בשטח עוין.
+                        <br>
+    אימינט (IMINT, קיצור של Imagery Intelligence), הוא מונח המתאר תת-תחום במודיעין חזותי הכולל את המקורות הבאים:
+                        <br><strong>
+    תצלומי אוויר, המצולמים באמצעות מטוס ריגול או באמצעות כלי טיס בלתי מאויש.
+                        <br>
+    תצלומי לוויין, המצולמים באמצעות לווין ריגול.
+                    </strong><br><br>
+    המודיעין החזותי מספק 'תמונה עדכנית מהשטח', מאפשר מעבר לניתוח הפריטים המופיעים בצילום, כולל הסקת מסקנות גאוגרפיות וגאולוגיות לגבי פני השטח, הקרקע וכדומה.
+                        <br>
+    מודיעין חזותי בזמן אמת מאפשר גם איכון של המטרות וסגירה מהירה של מעגל ירי כאשר המודיעין מסמן את המטרה ואילו גורמי האש (בעיקר חיל האוויר או ארטילריה) מבצעים תקיפה מדויקת שלה.
+                        <br>
+                        דוגמה לשימוש בוויזינט וסגירת מעגל ירי בזמן אמת היא הסיכול הממוקד של מייסד חמאס, אחמד יאסין, שאותר על ידי מזל"ט בעת שיצא ממסגד וחוסל תוך דקות ספורות בידי מסוק אפאצ'י של חיל האוויר שירה טיל מדויק אל עבר המטרה שסימן לו המזל"ט.
+                </p>
+                </div>
+            </div>
+
+    <!--    for sources DETAILS information   -->
+        {% for data_name,url in data: %}
+        <div class="info-container">
+            <div class="info-title-container">
+                <h1 class="info-title" id="{{data_name}}">{{data_name}}</h1>
+    <!--            <div class="arrow"></div>-->
+            </div>
+            <div class="info-frame-container">
+                <iframe class="iframe-info" src="{{url}}#firstHeading"></iframe>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<script src="../javascript/topbarAnimation.js"></script>
+<script src="../javascript/sourcesInfo.js"></script>
+</body>
+</html>

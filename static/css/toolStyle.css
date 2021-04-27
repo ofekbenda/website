@@ -1,0 +1,89 @@
+@font-face {
+    font-family: SecularOne;
+    src: url("../fonts/SecularOne-Regular.ttf");
+}
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background: whitesmoke;
+}
+.page-container{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    direction: rtl;
+}
+
+.content-container{
+    width: 100%;
+    margin-top: 6rem;
+}
+/* main title style */
+.main-titles{
+   color: #6b705c;
+    /*6b705c*/
+    /*background: rgba(84, 101, 255,0.9);*/
+    font-family: system-ui;
+    /* margin-right: 5vw; */
+    /*background-image: url(../images/engineering.png);*/
+    background-repeat: no-repeat;
+    background-size: 15rem;
+    background-position: left center;
+    padding: 0 3rem 0 16rem;
+    margin: 1rem 0 2rem 0;
+}
+.second-titles{
+    font-family: system-ui;
+    color: #6b705c;
+    padding: 0 3rem 0 16rem;
+    margin: 3rem 0;
+}
+.main-title, .second-title{
+    font-size: 3vw;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin: 0;
+}
+.second-title{
+    font-size: 1.4vw;
+    margin-top: 8px;
+    font-weight: 350;
+}
+.main-title{
+    /*background: #8f2d56;*/
+    /*color: white;*/
+    color: var(--colori);
+    border-bottom: 5px solid var(--colori);
+}
+
+.tools-container{
+    display: flex;
+    justify-content: space-between;
+    margin: 3vw;
+    flex-wrap: wrap;
+}
+.tool-container{
+    width: 14vw;
+}
+.tool{
+    height: 4vw;
+    background-color: #a5a58d;
+    color: white;
+    font-size: x-large;
+    font-family: system-ui;
+    padding: 1vw;
+    background-repeat: no-repeat;
+    background-size: 6vw;
+    background-position: left center;
+}
+.tool:hover{
+    cursor: pointer;
+}
+.tools-container > * {
+    margin: 20px;
+}
+

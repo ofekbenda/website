@@ -24,7 +24,7 @@ body{
     font-weight: 350;
 }
 
-#input-dataTables-list {
+#input-databasesInfo-list {
     width: 15vw;
     height: 27px;
     -webkit-border-radius: 6px;
@@ -34,6 +34,7 @@ body{
     font-size: 20px;
     margin: 10px;
     font-family: system-ui;
+    padding-right: 15px;
 }
 .content-container{
     display: flex;
@@ -43,13 +44,18 @@ body{
 }
 #default-dash-container{
     text-align: center;
-    margin-top: 9vw;
+    margin-top: 8vw;
+    height: 100%;
+}
+img{
+    height: 25vw;
 }
 #default-info-container{
     text-align: right;
     padding: 20px;
     font-family: system-ui;
-    font-size: 20px;
+    font-size: 1.2vw;
+    height: 100%;
 }
 #default-info-container h1{
     color: #2364db;
@@ -91,20 +97,14 @@ body{
  #iframe-dash {
      margin-right: -4%;
  }
-
  .arrow {
-    padding-top: 10px;
-     padding-left: 40px;
-    height: 4.2vw;
-    width: 4.2vw;
-    transition: all 0.2s linear;
+    padding-top: 24px;
+    padding-left: 57px;
+    transition: all 0.5s ease;
 }
 .arrow::before {
     content: "";
-    position: absolute;
     display: block;
-    margin-right: 1vw;
-    margin-top: 1vw;
     width: 1.5vw;
     height: 1.5vw;
     border-right: 0.5vw solid white;
@@ -112,7 +112,9 @@ body{
     transform: rotate(315deg);
     border-radius: 0.3vw;
 }
-#info-title-container:hover > #info-arrow {
-  transform: translate3d(0, -10px, 0);
+ol{
+    height: 12vw;
+    overflow-x: auto;
+    margin: 0;
+    list-style-position: inside;
 }
-
