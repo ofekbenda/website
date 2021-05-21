@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <title>כלים למשתמש</title>
     <link rel="stylesheet" href="../css/topbarStyle.css">
-    <link rel="stylesheet" href="../css/toolsSidebar.css">
     <link rel="stylesheet" href="../css/tools.css">
-
 </head>
 <body>
+
 <!-- topbar -->
 <div class="topbar" id="topbar">
     <div class="topbar-stmbols">
@@ -42,243 +41,102 @@
         <a href="databasesInfo">מאתרים ומאגרים</a>
         <a href="sourcesInfo">מקורות וסג"חים</a>
         <a href="tools">כלים</a>
+        <a href="info">מידע כללי</a>
     </div>
 </div>
+
 <!-- end topbar -->
 
-<div class="page-container">
-<!--    sidebar     -->
-    <div class="side-bar-container">
-        <div class="sidebar-content-container">
-        <h2 class="sidebar-title">מידע וידע</h2>
-        <hr>
-        <ul class="main-list">
-            <li class="main-item">
-                <div class="selected-container">
-                    <a class="selected" href="toolsProcessing">
-                        <img class="sidebar-icon" src="../images/engineering.png">
-                        עיבוד והנגשה
-                    </a>
-                    <div class="arrow" id="arrow-0"></div>
-                </div>
-                <div class="second-list-container close" id="second-list-0">
-                    <ul class="second-list">
-                        <li class="second-item"><a href="toolsProcessing">מידע כללי</a></li>
-                        <li class="second-item"><a href="#">כלי 1</a></li>
-                        <li class="second-item"><a href="#">כלי 2</a></li>
-                    </ul>
-                </div>
-            </li>
+<div class="page-content-container">
 
-            <li class="main-item">
-                <div class="selected-container">
-                    <a class="selected" href="toolsLab">
-                        <img class="sidebar-icon" src="../images/data-storage.png">
-                        מעבדת דאטא
-                    </a>
-                    <div class="arrow" id="arrow-1"></div>
-                </div>
-                <div class="second-list-container close" id="second-list-1">
-                    <ul class="second-list">
-                        <li class="second-item"><a href="toolsLab">מידע כללי</a></li>
-                        <li class="second-item"><a href="#">כלי 1</a></li>
-                        <li class="second-item"><a href="#">כלי 2</a></li>
-                    </ul>
-                </div>
-            </li>
-
-            <li class="main-item">
-                <div class="selected-container">
-                    <a class="selected" href="toolsGeography">
-                        <img class="sidebar-icon" src="../images/map.png">
-                        גיאוגרפיה
-                    </a>
-                    <div class="arrow" id="arrow-2"></div>
-                </div>
-                <div class="second-list-container close" id="second-list-2">
-                    <ul class="second-list">
-                        <li class="second-item"><a href="toolsGeography">מידע כללי</a></li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
-
-        <h2 class="sidebar-title">כרמייה</h2>
-        <hr>
-        <ul class="main-list">
-            <li class="main-item">
-                <div class="selected-container">
-                    <a class="selected" href="toolsDevelopment">
-                        <img class="sidebar-icon" src="../images/idea.png">
-                        פיתוח
-                    </a>
-                    <div class="arrow" id="arrow-3"></div>
-                </div>
-                <div class="second-list-container close" id="second-list-3">
-                    <ul class="second-list">
-                        <li class="second-item"><a href="toolsDevelopment">מידע כללי</a></li>
-                        <li class="second-item"><a href="#">כלי 1</a></li>
-                        <li class="second-item"><a href="#">כלי 2</a></li>
-                        <li class="second-item"><a href="#">כלי 3</a></li>
-                        <li class="second-item"><a href="#">כלי 4</a></li>
-                        <li class="second-item"><a href="#">כלי 5</a></li>
-                        <li class="second-item"><a href="#">כלי 6</a></li>
-                    </ul>
-                </div>
-            </li>
-
-            <li class="main-item">
-                <div class="selected-container">
-                    <a class="selected" href="toolsTargets">
-                        <img class="sidebar-icon" src="../images/target.png">
-                        יעדים
-                    </a>
-                    <div class="arrow" id="arrow-4"></div>
-                </div>
-                <div class="second-list-container close" id="second-list-4">
-                    <ul class="second-list">
-                        <li class="second-item"><a href="toolsTargets">מידע כללי</a></li>
-                        <li class="second-item"><a href="#">כלי 1</a></li>
-                        <li class="second-item"><a href="#">כלי 2</a></li>
-                    </ul>
-                </div>
-            </li>
-
-            <li class="main-item">
-                <div class="selected-container">
-                    <a class="selected" href="toolsActivity">
-                        <img class="sidebar-icon" src="../images/attention.png">
-                        פעילות והתרעה
-                    </a>
-                    <div class="arrow" id="arrow-5"></div>
-                </div>
-                <div class="second-list-container close" id="second-list-5">
-                    <ul class="second-list">
-                        <li class="second-item"><a href="toolsActivity">מידע כללי</a></li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
-
-        <h2 class="sidebar-title">מקורות וסנסורים</h2>
-        <hr>
-        <ul class="main-list">
-            <li class="main-item">
-                <div class="selected-container">
-                    <a class="selected" href="toolsSensors">
-                        <img class="sidebar-icon" src="../images/briefing.png">
-                        פרוייקטים
-                    </a>
-                    <div class="arrow" id="arrow-6"></div>
-                </div>
-                <div class="second-list-container close" id="second-list-6">
-                    <ul class="second-list">
-                        <li class="second-item"><a href="toolsSensors">מידע כללי</a></li>
-                        <li class="second-item"><a href="#">כלי 1</a></li>
-                        <li class="second-item"><a href="#">כלי 2</a></li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
+    <div class="main-titles">
+        <h1 class="main-title">כלים למשתמש</h1>
+        <h2 class="second-title">כאן תוכלו למצוא כלים למטרות שונות</h2>
     </div>
-    </div>
-<!-- end sidebar-->
 
-    <div class="organization-struct-container">
-        <div class="main-titles">
-            <h1 class="main-title">כלים לכר"מות והבנייה</h1>
-            <h2 class="second-title">כאן תוכלו לקרוא על המדורים שלנו ולצפות בכלים שכל מדור מציע</h2>
+<!--    TAMA TOOLS    -->
+    <div class="content-container">
+        <div class="title-container">
+                <h1 class="tools-title">כלים לתמא</h1>
         </div>
 
-<!--    organization structure    -->
-        <figure>
-            <ul class="tree">
-                <li>
-                    <div>
-                        <code class="section" id="section-1">ענף מרחב חכם</code>
-                        <span class="tooltiptext" id="tooltiptext-1">
-                            מלא מלא טקסט הסברים על הענף מה יש בו גכעח געאל קכחרלך לרח עךלרע לכע כלער  לכל לכהלכ לעא םג כרם
-                            לא מלא טקסט הסברים על הענף מה יש בו גכעח געאל קכחרלך לרח עךלרע לכע כלער  לכל לכהלכ לעא םג כרם
-                        </span>
-                    </div>
-                    <ul>
-                        <li>
-                            <div>
-                                <code class="section" id="section-2">מידע וידע</code>
-                                <span class="tooltiptext" id="tooltiptext-2">
-                                    לא מלא טקסט הסברים על הענף מה יש בו גכעח געאל קכחרלך לרח עךלרע לכע כלער  לכל לכהלכ לעא םג כרםלא מלא טקסט הסברים על הענף מה יש בו גכעח געאל קכחרלך לרח עךלרע לכע כלער  לכל לכהלכ לעא םג כרם
-                                </span>
-                            </div>
+        <div class="tools-container">
+            <div class="tool-container">
+                <div class="tool" style="background-image: url('../images/attention.png')">
+                    כלי 1
+                </div>
+                <span>מיצוי ועיבוד נתונים לפי פרמטרים שונים</span>
+            </div>
 
-                            <ul>
-                                <li>
-                                    <div>
-                                       <code class="section" id="section-3"><a href="toolsGeography"> גיאוגרפיה</a></code>
-                                        <span class="tooltiptext" id="tooltiptext-3">
-                                            לא מלא טקסט הסברים על הענף מה יש בו גכעח געאל קכחרלך לרח עךלרע לכע כלער  לכל לכהלכ לעא םג כרםלא מלא טקסט הסברים על הענף מה יש בו גכעח געאל קכחרלך לרח עךלרע לכע כלער  לכל לכהלכ לעא םג כרם
-                                        </span>
-                                    </div>
+            <div class="tool-container">
+                <div class="tool" style="background-image: url('../images/lab-tool1.png')">
+                    כלי 2
+                </div>
+                <span>מיצוי ועיבוד נתונים לפי פרמטרים שונים</span>
+            </div>
 
-                                </li>
-                                 <li>
-                                    <code class="section" id="section-4"><a href="toolsLab">מעבדת דאטא</a></code>
-                                     <span class="tooltiptext" id="tooltiptext-4">
-                                         לא מלא טקסט הסברים על הענף מה יש בו גכעח געאל קכחרלך לרח עךלרע לכע כלער  לכל לכהלכ לעא םג כרםלא מלא טקסט הסברים על הענף מה יש בו גכעח געאל קכחרלך לרח עךלרע לכע כלער  לכל לכהלכ לעא םג כרם
-                                     </span>
-                                </li>
-                                <li>
-                                    <code class="section" id="section-5"><a href="toolsProcessing"> עיבוד והנגשה</a></code>
-                                     <span class="tooltiptext" id="tooltiptext-5">
-                                         לא מלא טקסט הסברים על הענף מה יש בו גכעח געאל קכחרלך לרח עךלרע לכע כלער  לכל לכהלכ לעא םג כרםלא מלא טקסט הסברים על הענף מה יש בו גכעח געאל קכחרלך לרח עךלרע לכע כלער  לכל לכהלכ לעא םג כרם
-                                     </span>
-                                </li>
-                            </ul>
-                        </li>
+            <div class="tool-container">
+                <div class="tool" style="background-image: url('../images/lab-tool2.png')">
+                    כלי 3
+                </div>
+                <span>מיצוי ועיבוד נתונים לפי פרמטרים שונים</span>
+            </div>
 
-                        <li>
-                            <code class="section" id="section-6">כרמייה</code>
-                            <span class="tooltiptext" id="tooltiptext-6">
-                                לא מלא טקסט הסברים על הענף מה יש בו גכעח געאל קכחרלך לרח עךלרע לכע כלער  לכל לכהלכ לעא םג כרםלא מלא טקסט הסברים על הענף מה יש בו גכעח געאל קכחרלך לרח עךלרע לכע כלער  לכל לכהלכ לעא םג כרם
-                            </span>
-                            <ul>
-                                <li>
-                                    <code class="section" class="section" id="section-7"><a href="toolsDevelopment">פיתוח</a></code>
-                                    <span class="tooltiptext" id="tooltiptext-7">
-                                        לא מלא טקסט הסברים על הענף מה יש בו גכעח געאל קכחרלך לרח עךלרע לכע כלער  לכל לכהלכ לעא םג כרםלא מלא טקסט הסברים על הענף מה יש בו גכעח געאל קכחרלך לרח עךלרע לכע כלער  לכל לכהלכ לעא םג כרם
-                                    </span>
+            <div class="tool-container">
+                <div class="tool" style="background-image: url('../images/idea.png')">
+                    כלי 4
+                </div>
+                <span>מיצוי ועיבוד נתונים לפי פרמטרים שונים</span>
+            </div>
 
-                                </li>
-                                <li>
-                                    <code class="section" class="section" id="section-8"><a href="toolsTargets">יעדים</a></code>
-                                    <span class="tooltiptext" id="tooltiptext-8">
-                                        לא מלא טקסט הסברים על הענף מה יש בו גכעח געאל קכחרלך לרח עךלרע לכע כלער  לכל לכהלכ לעא םג כרםלא מלא טקסט הסברים על הענף מה יש בו גכעח געאל קכחרלך לרח עךלרע לכע כלער  לכל לכהלכ לעא םג כרם
-                                    </span>
+            <div class="tool-container">
+                <div class="tool" style="background-image: url('../images/target.png')">
+                    כלי 5
+                </div>
+                <span>מיצוי ועיבוד נתונים לפי פרמטרים שונים</span>
+            </div>
 
-                                </li>
-                                 <li>
-                                    <code class="section" id="section-9"><a href="toolsActivity">התרעה ופעילות</a></code>
-                                     <span class="tooltiptext" id="tooltiptext-9">
-                                         לא מלא טקסט הסברים על הענף מה יש בו גכעח געאל קכחרלך לרח עךלרע לכע כלער  לכל לכהלכ לעא םג כרםלא מלא טקסט הסברים על הענף מה יש בו גכעח געאל קכחרלך לרח עךלרע לכע כלער  לכל לכהלכ לעא םג כרם
-                                     </span>
-                                </li>
-                            </ul>
-                        </li>
+            <div class="tool-container">
+                <div class="tool" style="background-image: url('../images/briefing.png')">
+                    כלי 6
+                </div>
+                <span>מיצוי ועיבוד נתונים לפי פרמטרים שונים</span>
+            </div>
 
-                         <li>
-                            <code class="section" id="section-10"><a href="toolsSensors">מקורות וסנסורים</a></code>
-                             <span class="tooltiptext" id="tooltiptext-10">
-                                 לא מלא טקסט הסברים על הענף מה יש בו גכעח געאל קכחרלך לרח עךלרע לכע כלער  לכל לכהלכ לעא םג כרםלא מלא טקסט הסברים על הענף מה יש בו גכעח געאל קכחרלך לרח עךלרע לכע כלער  לכל לכהלכ לעא םג כרם
-                             </span>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </figure>
+            <div class="tool-container">
+                <div class="tool" style="background-image: url('../images/map.png')">
+                    כלי 7
+                </div>
+                <span>מיצוי ועיבוד נתונים לפי פרמטרים שונים</span>
+            </div>
+        </div>
     </div>
+
+    <div class="content-container">
+        <div class="title-container">
+                <h1 class="tools-title">כלים לתמא</h1>
+        </div>
+
+        <div class="tools-container">
+            <div class="tool-container">
+                <div class="tool">
+                    כלי 1
+                </div>
+                <span>מיצוי ועיבוד נתונים לפי פרמטרים שונים</span>
+            </div>
+
+            <div class="tool-container">
+                <div class="tool">
+                    כלי 2
+                </div>
+                <span>מיצוי ועיבוד נתונים לפי פרמטרים שונים</span>
+            </div>
+        </div>
+    </div>
+
 </div>
 
-<script src="../javascript/http_code.jquery.com_jquery-3.5.1.js"></script>
 <script src="../javascript/topbarAnimation.js"></script>
-<script src="../javascript/sidebarTools.js"></script>
+
 </body>
 </html>

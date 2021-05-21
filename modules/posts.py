@@ -1,5 +1,3 @@
-__author__ = "Daniel Harari"
-
 from typing import Dict
 import msg_parser
 from db import db
@@ -39,7 +37,7 @@ class PostModel(db.Model):
         if not exists("static/mails/"+path):
             raise ValueError("path doesnt exist")
 
-    def __str__(self) -> str:
+    def __str__(self):
         """
         creates string representation of posts
         :return string representation of post:
@@ -53,7 +51,7 @@ class PostModel(db.Model):
         Gist: {self.essence}
         """
 
-    def __repr__(self) -> str:
+    def __repr__(self):
         """
         creates obj representation of Post
         :return: Obj representation
@@ -61,36 +59,21 @@ class PostModel(db.Model):
         return f"Post(fp={self.path}, subject={self.title}, publish_date={self.date}, publisher={self.author}," \
                f" tags={self.tags}, gist={self.essence})"
 
-    def json(self) -> Dict:
+    def json(self):
         """
         Creates a Json format object and returns it
         :return: Json of Post
         """
         post_json = {
             "id": self.id,
-            "data": {
-                "path": self.path,
-                "title": self.title,
-                "date": f"{self.date}",
-                "author": self.author,
-                "essence": self.essence,
-                "tags": self.tags
-            }
+            "path": self.path,
+            "title": self.title,
+            "date": f"{self.date}",
+            "author": self.author,
+            "essence": self.essence,
+            "tags": self.tags
         }
         return post_json
-
-    @classmethod
-    def set_max_gist_len(cls, length: int) -> int:
-        """
-        Sets Max Length For gists
-        :param length: New max Length For Gists
-        :return: Length set
-        """
-        if type(length) == int and 0 < length <= 500:
-            cls.GIST_MAX_LENGTH = length
-        else:
-            raise ValueError("Value has to be a positive Integer up to 500")
-        return cls.GIST_MAX_LENGTH
 
     @staticmethod
     def read_dict(post_dict: dict) -> 'PostModel':
@@ -123,6 +106,10 @@ class PostModel(db.Model):
     def find_by_id(cls, _id):
         return cls.query.filter_by(id=_id).first()
 
+    @classmethod
+    def find_by_title(cls, _title):
+        return cls.query.filter_by(title=_title).first()
+
     def save_to_db(self):
         db.session.add(self)
         db.session.commit()
@@ -130,7 +117,7 @@ class PostModel(db.Model):
     def delete_from_db(self):
         db.session.delete(self)
         db.session.commit()
-
-    @staticmethod
-    def json_list(org_json):
-        return [post_json['data'] for post_json in org_json["data"]]
+    #
+    # @staticmethod
+    # def json_list(org_json):
+    #     return [post_json['data'] for post_json in org_json["data"]]

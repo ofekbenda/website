@@ -42,6 +42,7 @@
         <a href="databasesInfo">מאתרים ומאגרים</a>
         <a href="sourcesInfo">מקורות וסג"חים</a>
         <a href="tools">כלים</a>
+        <a href="info">מידע כללי</a>
     </div>
 </div>
 
@@ -55,7 +56,7 @@
                 <div class="update-container">
                     <h1 class="update-date">{{date}}</h1>
 
-                    {% for time,content in main_updates[date].items(): %}
+                    {% for time,content in main_updates[date]: %}
                     <div class = "time-content-container">
                         <span class="update-time">{{time}}</span>
                         <span class="update-content">{{content}}</span>
@@ -78,8 +79,42 @@
         <section class="content-container">
 
             <div class="second-titles">
-                <h1 class="main-section-title" id="main-title-2">בואו להתעדכן</h1>
+                <h1 class="main-section-title" id="main-title-2">בואו להתנסות</h1>
                 <h2 class="second-section-title" id="second-title-2">
+                    ב<strong>כלים לכר"מות והבנייה</strong>
+                    של הענף בחלוקה לכלים ליעדים, כלים לתמ"א, כלים להתרעה והערכת מצב וכן כלים להבנייה ולכר"מות
+                </h2>
+            </div>
+
+            <div class="arrow">
+                <a href=tools><div class="button-left"></div></a>
+            </div>
+        </section>
+    </div>
+
+    <div class="Rowcontainer-second" id="row-container-3">
+        <section class="content-container">
+
+            <div class="second-titles">
+                <h1 class="main-section-title" id="main-title-3">בואו להבין</h1>
+                <h2 class="second-section-title" id="second-title-3">
+                    <strong>איך ענף מרחב חכם בנוי</strong>
+                    - מי המדורים השונים, מה תפקידם ותחומי העיסוק. מה יש להם להציע ואיך תוכלו להיעזר בהם ולפנות אישית לאנשי הצוותים
+                </h2>
+            </div>
+
+            <div class="arrow">
+                <a href=info><div class="button-left"></div></a>
+            </div>
+        </section>
+    </div>
+
+    <div class="Rowcontainer-second" id="row-container-4">
+        <section class="content-container">
+
+            <div class="second-titles">
+                <h1 class="main-section-title" id="main-title-4">בואו להתעדכן</h1>
+                <h2 class="second-section-title" id="second-title-4">
                     בנושאי חדשות, דאטא וטכנולוגיות באמ"ן ובזירה.
                     ב<strong>תור העדכונים</strong>
                     תוכלו לקרוא את כל העדכונים האחרונים מתויגים לפי נושאים עם אפשרות סינון.
@@ -93,12 +128,12 @@
         </section>
     </div>
 
-    <div class="Rowcontainer-second" id="row-container-3">
+    <div class="Rowcontainer-second" id="row-container-5">
         <section class="content-container">
 
             <div class="second-titles">
-                <h1 class="main-section-title" id="main-title-3">בואו לצפות</h1>
-                <h2 class="second-section-title" id="second-title-3">
+                <h1 class="main-section-title" id="main-title-5">בואו לצפות</h1>
+                <h2 class="second-section-title" id="second-title-5">
                     באוסף
                     ה<strong>מאגרים ומאתרים</strong>
                     בזירה. הסברים אודותיהם ותיעוד בהתאם לסג"חים, כמו כן, סטטיסטיקות וויזואליזציה ודשבורדים חכמים
@@ -111,12 +146,12 @@
         </section>
     </div>
 
-    <div class="Rowcontainer-second" id="row-container-4">
+    <div class="Rowcontainer-second" id="row-container-6">
         <section class="content-container">
 
             <div class="second-titles">
-                <h1 class="main-section-title" id="main-title-4">בואו ללמוד</h1>
-                <h2 class="second-section-title" id="second-title-4">
+                <h1 class="main-section-title" id="main-title-6">בואו ללמוד</h1>
+                <h2 class="second-section-title" id="second-title-6">
                     על
                     ה<strong>מקורות וסגח"ים</strong>
                     בזירה. כל מה שרציתם לדעת ולא העזתם לשאול
@@ -129,22 +164,6 @@
         </section>
     </div>
 
-    <div class="Rowcontainer-second" id="row-container-5">
-        <section class="content-container">
-
-            <div class="second-titles">
-                <h1 class="main-section-title" id="main-title-5">בואו להתנסות</h1>
-                <h2 class="second-section-title" id="second-title-5">
-                    ב<strong>כלים לכר"מות והבנייה</strong>
-                    של הענף בחלוקה לכלים ליעדים, כלים לתמ"א, כלים להתרעה והערכת מצב וכן כלים להבנייה ולכר"מות
-                </h2>
-            </div>
-
-            <div class="arrow">
-                <a href=tools><div class="button-left"></div></a>
-            </div>
-        </section>
-    </div>
 
     <!--    contact    -->
     <div class="contact-container">
@@ -160,18 +179,20 @@
             <div class="form-container">
                 <form>
                     <div class="sender">
-                        <label>שם השולח:</label>
-                        <input class="contact-input" type="text" id="name">
+<!--                        <label>שם השולח:</label>-->
+                        <input class="contact-input" type="text" id="name" placeholder="שם השולח">
                     </div>
                     <div class="msg">
-                        <label>הודעה:</label>
-                        <textarea class="contact-input" id="text-input" placeholder="כתוב כאן..."></textarea>
+<!--                        <label>הודעה:</label>-->
+                        <textarea class="contact-input" id="text-input" placeholder="כתוב כאן את ההודעה..."></textarea>
                     </div>
                     <div class="submit-container">
                         <input class="submit-btn" type="submit" value="שלח">
                     </div>
                 </form>
+                
             </div>
+            <img src="../images/telephone.png">
         </div>
     </div>
 </div>

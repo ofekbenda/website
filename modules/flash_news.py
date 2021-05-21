@@ -1,5 +1,3 @@
-__author__ = "Daniel Harari"
-
 from datetime import datetime
 from db import db
 
@@ -34,7 +32,7 @@ class NewsFlashModel(db.Model):
         creates obj representation of NewsFlash
         :return: Obj representation
         """
-        return f"NewsFlashModel(news={self.msg}, date_time={self.date_time})"
+        return f"NewsFlashModel(news={self.message}, date_time={self.date_time})"
 
     def __str__(self) -> str:
         """
@@ -42,7 +40,7 @@ class NewsFlashModel(db.Model):
         :return: Nicely formatted string representation of the NewsFlashModel
         """
         return f"""
-        News: {self.msg},
+        News: {self.message},
         Date: {self.date_time.strftime("%d/%m/%Y %H:%M")}
         """
 
@@ -59,45 +57,26 @@ class NewsFlashModel(db.Model):
         return self.date_time.time().strftime("%H:%M")
 
     def json(self):
-        return {f"{self.date.strftime('%d/%m/%y')} {self.day_of_week}": {"id": self.id, self.time: self.message}}
+        return {f"{self.date} {self.day_of_week}": {self.time: self.message}}
+
+    def parser(self):
+        return {f"{self.day_of_week} {self.date.strftime('%d/%m/%Y')}": (self.time, self.message)}
 
     @classmethod
-    def english_days(cls):
-        """
-        Turns days into days in Hebrew
-        :return: None
-        """
-        cls.HASH_DAYS_DICT[0] = "Monday"
-        cls.HASH_DAYS_DICT[1] = "Tuesday"
-        cls.HASH_DAYS_DICT[2] = "Wedensday"
-        cls.HASH_DAYS_DICT[3] = "Thursday"
-        cls.HASH_DAYS_DICT[4] = "Friday"
-        cls.HASH_DAYS_DICT[5] = "Saturday"
-        cls.HASH_DAYS_DICT[6] = "Sunday"
+    def find_row(cls, _datetime, _message):
+        data = NewsFlashModel.query.all()  # get all table
+        res = None
+        for item in data:
+            if _datetime == item.date_time and _message == item.message:
+                res = item
+                break
 
-    @classmethod
-    def find_by_id(cls, _id):
-        return cls.query.filter_by(id=_id).first()
+        return res
 
-    def save_to_db(self):
+    def add(self):
         db.session.add(self)
         db.session.commit()
 
-    def delete_from_db(self):
+    def delete(self):
         db.session.delete(self)
         db.session.commit()
-
-    # @staticmethod
-    # def json_list(org_json):
-    #     data = org_json['data']
-    #     new_json = dict().
-    #     for flash in data:
-    #         if flash.keys()[0] in new_json["keys"]:
-    #             day_key = flash.keys()[0]
-    #             if flash[day_key].keys()[0] in new_json[day_key].keys()[0]:
-    #                 time_key = flash[day_key].keys()[0]
-    #                 new_json[day_key][time_key] += f'\n\n{flash[day_key][time_key]}'
-    #             else:
-    #                 new_json[day_key] = {org_json[day_key].keys()[1]:
-    #         else:
-    #             flash.

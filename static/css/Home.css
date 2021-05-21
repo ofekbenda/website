@@ -149,19 +149,16 @@ body{
     margin-right: 3.8vw;
 }
 .contact-input{
-    margin-right: 1.3vw;
-    border: 3px solid #cccccc;
+border: 3px solid #cccccc;
     font-family: system-ui;
     width: 25vw;
-    height: 1.5vw;
+    font-size: large;
 }
 .msg{
     margin-top: 1vw;
     display: flex;
 }
 #text-input{
-    margin-right: 4.4vw;
-    width: 25vw;
     height: 5vw;
 }
 .submit-btn{
@@ -171,8 +168,9 @@ body{
     font-family: system-ui;
     border: none;
     cursor: pointer;
-    width: 34vw;
+    width: 26vw;
     margin-top: 1vw;
+    border-radius: 8px;
 }
 .submit-btn:hover{
     background-color: #236493;

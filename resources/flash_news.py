@@ -10,61 +10,79 @@ class FlashNews(Resource):
                         help="Datetime must be in format dd/mm/yyyy HH:MM", default=datetime.now())
 
     @staticmethod
-    def get(_id):
-        flash_news = NewsFlashModel.find_by_id(_id)
+    def get():
+        flash_news = FlashNewsList.get()
         if flash_news:
-            return flash_news.json()
-        return {"msg": f"NewsFlash '{_id}' was not found"}, 404
+            return flash_news
+        return {"msg": f"NewsFlash were not found"}, 404
 
     @classmethod
-    def post(cls, _id):
-        if NewsFlashModel.find_by_id(_id):
-            return {"msg": f"NewsFlash of id {_id} already exists"}, 400
+    def post(cls):
+        # Parse the arguments that send with the post request
         data = cls.parser.parse_args()
-        news_flash = NewsFlashModel(**data)
+
+        if data.message == '' or data.date_time == '':
+            return {"msg": f"Source title/link is missing"}, 400
+
+        news_to_insert = NewsFlashModel(**data)
+
+        # if the day already exist with another date - DELETE all news with the old date
+        dates_list = FlashNewsList.get().keys()
+        for item in dates_list:
+            day, date = item.split()
+            if day == news_to_insert.day_of_week and date != news_to_insert.date.strftime('%d/%m/%Y'):
+                FlashNewsList.delete_by_date(date)
+
         try:
-            news_flash.save_to_db()
+            news_to_insert.add()
         except Exception as e:
             print(e)
             return {"msg": "An error has occurred while inserting this item"}, 500
-        return {"msg": "NewsFlash posted", "data": news_flash.json()}, 201
+        return {"msg": "news inserted", "data": news_to_insert.json()}, 201
 
     @classmethod
-    def put(cls, _id):
-        news_flash = NewsFlashModel.find_by_id(_id)
+    def delete(cls):
         data = cls.parser.parse_args()
-        if not news_flash:
-            news_flash = NewsFlashModel(**data)
-        else:
-            news_flash.message = data['message']
-            news_flash.date_time = data['date_time']
-        try:
-            news_flash.save_to_db()
-        except Exception as e:
-            print(e)
-            return {"msg", "An error has occurred while updating this item"}, 500
-        return {"msg": "Item posted", "data": news_flash.json()}, 200
+        news_to_delete = NewsFlashModel.find_row(data.date_time, data.message)
 
-    @staticmethod
-    def delete(_id):
-        news_flash = NewsFlashModel.find_by_id(_id)
-        if not news_flash:
-            return {"msg": f"NewsFlash {_id} doesn't exist"}, 404
-        try:
-            news_flash.delete_from_db()
-            return {"msg": f"Item {_id} deleted successfully"}, 200
-        except Exception as e:
-            print(e)
-            return {"msg", "An error has occurred deleting this item"}, 500
+        if news_to_delete is not None:
+            try:
+                news_to_delete.delete()
+                return {"msg": "Item deleted successfully", "item": news_to_delete.parser()}, 200
+            except Exception as e:
+                print(e)
+                return {"msg", "An error has occurred deleting this item"}, 500
+        else:
+            return {"msg": f"NewsFlash {data} doesn't exist"}, 404
 
 
 class FlashNewsList(Resource):
     parser = reqparse.RequestParser()
-    parser.add_argument('news_amount', required=False, type=int, help='news_amount has to be an integer')
+    # parser.add_argument('news_amount', required=False, type=int, help='news_amount has to be an integer')
+
+    @classmethod
+    def group_by_day(cls, ls):
+        res = {}
+        for elem in ls:
+            key, val = list(elem.keys()), list(elem.values())
+            if key[0] in res:
+                res[key[0]].append(val[0])
+            else:
+                res[key[0]] = [val[0]]
+        return res
 
     @classmethod
     def get(cls):
-        data = cls.parser.parse_args()
-        if data['news_amount']:
-            return {"data": [flash.json() for flash in NewsFlashModel.query.all()[-data['news_amount']:]]}
-        return {"data": [flash.json() for flash in NewsFlashModel.query.all()]}
+        data = NewsFlashModel.query.all()               # get all table
+        data = [flash.parser() for flash in data]      # parse it with json format
+        data = cls.group_by_day(data)                 # group all news by date
+        return data
+
+    @classmethod
+    # delete all the news with data from table
+    def delete_by_date(cls, _date):
+        data = NewsFlashModel.query.all()
+        for item in data:
+            item_date = item.date_time.date().strftime("%d/%m/%Y")
+            if item_date == _date:
+                item.delete()

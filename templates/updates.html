@@ -24,7 +24,7 @@
             <a href="/"><div class="home-nav-link"></div></a>
         </div>
         <div class="dropdown-nav-container">
-            <a href="tools" class="dropdown-nav-link">
+            <a href="#" class="dropdown-nav-link">
                 <div class="dropdown-nav close" id="dropdown-nav">
                     <div class="row" id="row-1"></div>
                     <div class="row" id="row-2"></div>
@@ -40,7 +40,8 @@
         <a href="updates">תור עדכונים</a>
         <a href="databasesInfo">מאתרים ומאגרים</a>
         <a href="sourcesInfo">מקורות וסג"חים</a>
-        <a href="#">כלים</a>
+        <a href="tools">כלים</a>
+        <a href="info">מידע כללי</a>
     </div>
 </div>
 
@@ -57,7 +58,7 @@
     <!-- Updates Components -->
     <div id="all-mail-container">
     {% for i,row in mails.iterrows(): %}
-        {% with path, title, date, author, gist, tags  = row %}
+        {% with id, path, title, date, author, gist, tags  = row %}
         <div class="mail_container" id = "mail_container_{{i}}">
             <a href="mails/{{path}}" target="_blank" >
              <br>

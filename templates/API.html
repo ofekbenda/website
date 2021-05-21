@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>API</title>
+    <link rel="stylesheet" href="../css/API.css">
+</head>
+<body>
+
+<div class="page-container">
+<!--    FlashNews API     -->
+    <div class="api-container" id="flashNews-container">
+        <!--    ADD NEW SOURCE    -->
+        <div id="add-news-container">
+            <h1>הוספת עדכונים שוטפים לדף בית:</h1>
+            <form id ="add-news-form" onsubmit="addNewsSubmit(event)">
+                <div class = "date-container">
+                    <label for="date-input">תאריך:</label>
+                    <input type="date" name = "date-input" id="date-input">
+                </div>
+                <div class="time-container">
+                    <label for="time-input">שעה:</label>
+                    <input type="time" name = "time-input" id="time-input">
+                </div>
+                <div class="flashNews-container">
+                    <label for="flashNews-input">עדכון:</label>
+                    <input type="text" name = "flashNews-input" id="flashNews-input" placeholder="הכנס כאן את העדכון">
+                </div>
+                <input class = "submit-btn" id="submit-flashNews" type="submit" value="עדכן">
+            </form>
+        </div>
+
+        <!--    DELETE FLASHNEWS    -->
+        <div id ="delete-news-container">
+            <h1>מחיקת ידיעות: </h1>
+            <form id = "delete-news-form" onsubmit = "deleteNewsSubmit(event)">
+                <label for="database-name-input">תאריך העדכון למחיקה:</label>
+                  <table>
+                      <tr>
+                          <td></td>
+                          <td>תאריך</td>
+                          <td>שעה</td>
+                          <td>ידיעה</td>
+                      </tr>
+                      {% for date in news: %}
+                        {% with i = loop.index %}
+                            {% for time,news in news[date] %}
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="news-{{i}}-{{loop.index}}"
+                                               value='{"date": "{{date}}", "time": "{{time}}","news": "{{news}}"}'/>
+                                    </td>
+                                    <td>{{date}}</td>
+                                    <td>{{time}}</td>
+                                    <td>{{news}}</td>
+                                </tr>
+                            {% endfor %}
+                        {% endwith %}
+                      {% endfor %}
+                  </table>
+                <input class = "submit-btn" type="submit" value="הסר">
+            </form>
+        </div>
+    </div>
+
+<!--    Updates API    -->
+    <div class="api-container" id="updates-container">
+        <h1>הוספת מיילים לדף עדכונים:</h1>
+        <form id="add-post-form" onsubmit="addPostSubmit(event)" enctype="multipart/form-data">
+<!--            " action="/updates_API" method="post"-->
+            <div class="drag-area">
+                    <div class="icon"><img src="../images/uploadFile.png"></div>
+                    <header>Drag & Drop to Upload File</header>
+                    <span>OR</span>
+                    <br>
+                    <input class="box__file" type="file" name="filename" id="file-selector" accept=".pdf, .msg">
+            </div>
+
+            <div class="tags-container">
+                <h2>הוספת תגיות:</h2>
+                <div class = "tags-area">
+                    {% for tag,color in tags.items(): %}
+                        <input type ="checkbox" class="tag-btn" id = "btn_{{tag}}" name="tags" value={{tag}} style="background: {{color}}">{{tag}}</input>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <input class = "submit-btn" id="updates-btn" type="submit" value="עדכן">
+        </form>
+    </div>
+
+<!--    databases API    -->
+    <div class="api-container" id="databases-container">
+        <!--    ADD NEW DataTable    -->
+        <div id="add-dataTable-container">
+            <h1>הוספת מאגר\מאתר: </h1>
+            <form id = "add-dataTable-form" onsubmit="addDatatableSubmit(event)">
+                <label for="database-name-input">שם המאגר\מאתר:</label>
+                <input type="text" name = "title" id="database-name-input" required>
+                <label for="database-wiki-link">קישור לדף ויקיאמן:</label>
+                <input type="text" name = "path" id="database-wiki-link" required>
+                <label for="database-wiki-link">קישור לדשבורד:</label>
+                <input type="text" name = "dash" id="database-dash-link" required>
+
+                <input class = "submit-btn" id="databases-updates" type="submit" value="עדכן">
+            </form>
+        </div>
+
+        <!--    DELETE DATA TABLE    -->
+        <div id ="delete-dataTable-container">
+            <h1>מחיקת מאגר\מאתר: </h1>
+            <form id = "delete-dataTable-form" onsubmit = "deleteDatatableSubmit(event)">
+                <label for="database-name-input">שם המאגר:</label>
+                  <select name="title">
+                      {% for title,path,dash in datatable: %}
+                        <option value="{{title}}">{{title}}</option>
+                      {% endfor %}
+                  </select>
+                <input class = "submit-btn" type="submit" value="הסר">
+            </form>
+        </div>
+    </div>
+
+<!--    sources API    -->
+    <div class="api-container" id="sources-container">
+        <!--    ADD NEW SOURCE    -->
+        <div id="add-source-container">
+            <h1>הוספת מקור: </h1>
+            <form id = "add-source-form" onsubmit = "addSourceSubmit(event)">
+                <label for="database-name-input">שם המקור:</label>
+                <input type="text" name = "title" id="source-name-input" required>
+                <label for="source-wiki-link">קישור לדף ויקיאמן:</label>
+                <input type="text" name = "link" id="source-wiki-link" required>
+                <input class = "submit-btn" type="submit" value="עדכן">
+            </form>
+        </div>
+
+        <!--    DELETE SOURCE    -->
+        <div id ="delete-source-container">
+            <h1>מחיקת מקור: </h1>
+            <form id = "delete-source-form" onsubmit = "deleteSourceSubmit(event)">
+                <label for="database-name-input">שם המקור:</label>
+                  <select name="title">
+                      {% for title,link in sources: %}
+                        <option value="{{title}}">{{title}}</option>
+                      {% endfor %}
+                  </select>
+                <input class = "submit-btn" type="submit" value="הסר">
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="../javascript/API.js"></script>
+</body>
+</html>

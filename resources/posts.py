@@ -1,5 +1,9 @@
+import werkzeug
 from flask_restful import reqparse, Resource
 from datetime import datetime
+
+from werkzeug.datastructures import FileStorage
+
 from modules.posts import PostModel
 
 
@@ -13,45 +17,45 @@ class Post(Resource):
     parser.add_argument('essence', type=str, help='essence is required', required=True)
     parser.add_argument('tags', type=str)
 
+    parser1 = reqparse.RequestParser()
+    parser1.add_argument('filename', type=FileStorage, location='files/posts', required=False)
+    parser1.add_argument('tags', type=str)
+
     @staticmethod
-    def get(_id):
-        post = PostModel.find_by_id(_id)
+    def get():
+        post = PostList.get()
         if post:
-            return post.json()
-        return {"msg": f"Post '{_id}' was not found"}, 404
+            return post
+        return {"msg": f"Post '{post}' was not found"}, 404
+
+    # @staticmethod
+    # def get_by_id(_id):
+    #     post = PostModel.find_by_id(_id)
+    #     if post:
+    #         return post.json()
+    #     return {"msg": f"Post '{_id}' was not found"}, 404
 
     @classmethod
-    def post(cls, _id):
-        if PostModel.find_by_id(_id):
-            return {"msg": f"Post of id {_id} already exists"}, 400
-        data = cls.parser.parse_args()
-        post = PostModel(**data)
-        try:
-            post.save_to_db()
-        except ValueError:
-            return {"msg": "File was not found"}, 404
-        except Exception as e:
-            print(e)
-            return {"msg": "An error has occurred while inserting this item"}, 500
-        return {"msg": "Post posted", "data": post.json()}, 201
-
-    @classmethod
-    def put(cls, _id):
-        post = PostModel.find_by_id(_id)
-        data = cls.parser.parse_args()
-        if not post:
-            post = PostModel(**data)
-        else:
-            post.message = data['message']
-            post.date_time = data['date_time']
-        try:
-            post.save_to_db()
-        except ValueError:
-            return {"msg": "File was not found"}, 404
-        except Exception as e:
-            print(e)
-            return {"msg", "An error has occurred while updating this item"}, 500
-        return {"msg": "Item posted", "data": post.json()}, 200
+    def post(cls):
+        # cls.parser.add_argument('filename', type=werkzeug.datastructures.FileStorage, location='files/posts')
+        data = cls.parser1.parse_args()
+        print(data)
+        # data = PostModel.mail_to_post("static/mails/"+data.filename["name"], data.tags)
+            # .parser.parse_args()
+        # if PostModel.find_by_title(data.title):
+        #     return {"msg": f"Post title already exists"}, 400
+        #
+        # post = PostModel(**data)
+        # PostList.save_post_file()
+        #
+        # try:
+        #     post.save_to_db()
+        # except ValueError:
+        #     return {"msg": "File was not found"}, 404
+        # except Exception as e:
+        #     print(e)
+        #     return {"msg": "An error has occurred while inserting this item"}, 500
+        # return {"msg": "Post posted", "data": post.json()}, 201
 
     @staticmethod
     def delete(_id):
@@ -71,10 +75,19 @@ class PostList(Resource):
     parser.add_argument('post_amount', required=False, type=int, help='post_amount has to be an integer')
 
     @classmethod
-    def get(cls, post_amount=50):
+    def get(cls):
         data = cls.parser.parse_args()
-        if data['post_amount']:
-            return {"data": [post.json() for post in PostModel.query.all()[-data['post_amount']:]]}
-        if post_amount:
-            return {"data": [post.json() for post in PostModel.query.all()[-post_amount:]]}
-        return {"data": [post.json() for post in PostModel.query.all()]}
+        # if data['post_amount']:
+        #     return [post.json() for post in PostModel.query.all()[-data['post_amount']:]]
+        # return [post.json() for post in PostModel.query.all()]
+        data = PostModel.query.all()               # get all table
+        data = [post.json() for post in data]      # parse it with json format
+        return data
+
+    @classmethod
+    def save_post_file(cls):
+        cls.parser.add_argument('file', type=werkzeug.datastructures.FileStorage, location='files/posts')
+        args = cls.parser.parse_args()
+        mail_file = args['file']
+        print(mail_file)
+        # mail_file.save(mail_file)

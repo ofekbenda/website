@@ -2,26 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>עיבוד והנגשה</title>
+    <title>פיתוח</title>
     <link rel="stylesheet" href="../css/topbarStyle.css">
-    <link rel="stylesheet" href="../css/toolsSidebar.css">
-    <link rel="stylesheet" href="../css/toolStyle.css">
+    <link rel="stylesheet" href="../css/infoSidebar.css">
+    <link rel="stylesheet" href="../css/infoStyle.css">
     <style>
         .main-titles{
-            background-image: url("../images/engineering.png");
+            background-image: url("../images/idea.png");
         }
         #tool-1{
-            background-image: url("../images/processing-tool1.png");
+            background-image: url("../images/lab-tool1.png");
         }
         #tool-2{
-            background-image: url("../images/processing-tool2.png");
+            background-image: url("../images/lab-tool2.png");
         }
         #tool-3{
-            background-image: url("../images/processing-tool3.png");
+            background-image: url("../images/lab-tool1.png");
+        }
+        #tool-4{
+            background-image: url("../images/lab-tool2.png");
+        }
+        #tool-5{
+            background-image: url("../images/lab-tool1.png");
+        }
+        #tool-6{
+            background-image: url("../images/lab-tool2.png");
         }
     </style>
 </head>
-<body style="--colori: #8f2d56">
+<body style="--colori: #e76f51">
 <!-- topbar -->
 <div class="topbar" id="topbar">
     <div class="topbar-stmbols">
@@ -54,6 +63,7 @@
         <a href="databasesInfo">מאתרים ומאגרים</a>
         <a href="sourcesInfo">מקורות וסג"חים</a>
         <a href="tools">כלים</a>
+        <a href="info">מידע כללי</a>
     </div>
 </div>
 <!-- end topbar -->
@@ -67,7 +77,7 @@
         <ul class="main-list">
             <li class="main-item">
                 <div class="selected-container">
-                    <a class="selected" href="toolsProcessing">
+                    <a class="selected" href="infoProcessing">
                         <img class="sidebar-icon" src="../images/engineering.png">
                         עיבוד והנגשה
                     </a>
@@ -75,7 +85,7 @@
                 </div>
                 <div class="second-list-container close" id="second-list-0">
                     <ul class="second-list">
-                        <li class="second-item" style="background-color: #5465ff; color: white"><a href="toolsProcessing">מידע כללי</a></li>
+                        <li class="second-item"><a href="infoProcessing">מידע כללי</a></li>
                         <li class="second-item"><a href="#">כלי 1</a></li>
                         <li class="second-item"><a href="#">כלי 2</a></li>
                     </ul>
@@ -84,7 +94,7 @@
 
             <li class="main-item">
                 <div class="selected-container">
-                    <a class="selected" href="toolsLab">
+                    <a class="selected" href="infoLab">
                         <img class="sidebar-icon" src="../images/data-storage.png">
                         מעבדת דאטא
                     </a>
@@ -92,7 +102,7 @@
                 </div>
                 <div class="second-list-container close" id="second-list-1">
                     <ul class="second-list">
-                        <li class="second-item"><a href="toolsLab">מידע כללי</a></li>
+                        <li class="second-item"><a href="infoLab">מידע כללי</a></li>
                         <li class="second-item"><a href="#">כלי 1</a></li>
                         <li class="second-item"><a href="#">כלי 2</a></li>
                     </ul>
@@ -101,7 +111,7 @@
 
             <li class="main-item">
                 <div class="selected-container">
-                    <a class="selected" href="toolsGeography">
+                    <a class="selected" href="infoGeography">
                         <img class="sidebar-icon" src="../images/map.png">
                         גיאוגרפיה
                     </a>
@@ -109,7 +119,7 @@
                 </div>
                 <div class="second-list-container close" id="second-list-2">
                     <ul class="second-list">
-                        <li class="second-item"><a href="toolsGeography">מידע כללי</a></li>
+                        <li class="second-item"><a href="infoGeography">מידע כללי</a></li>
                     </ul>
                 </div>
             </li>
@@ -120,7 +130,7 @@
         <ul class="main-list">
             <li class="main-item">
                 <div class="selected-container">
-                    <a class="selected" href="toolsDevelopment">
+                    <a class="selected" href="infoDevelopment">
                         <img class="sidebar-icon" src="../images/idea.png">
                         פיתוח
                     </a>
@@ -128,7 +138,7 @@
                 </div>
                 <div class="second-list-container close" id="second-list-3">
                     <ul class="second-list">
-                        <li class="second-item"><a href="toolsDevelopment">מידע כללי</a></li>
+                        <li class="second-item" style="background-color: #5465ff; color: white"><a href="infoDevelopment">מידע כללי</a></li>
                         <li class="second-item"><a href="#">כלי 1</a></li>
                         <li class="second-item"><a href="#">כלי 2</a></li>
                         <li class="second-item"><a href="#">כלי 3</a></li>
@@ -141,7 +151,7 @@
 
             <li class="main-item">
                 <div class="selected-container">
-                    <a class="selected" href="toolsTargets">
+                    <a class="selected" href="infoTargets">
                         <img class="sidebar-icon" src="../images/target.png">
                         יעדים
                     </a>
@@ -149,7 +159,7 @@
                 </div>
                 <div class="second-list-container close" id="second-list-4">
                     <ul class="second-list">
-                        <li class="second-item"><a href="toolsTargets">מידע כללי</a></li>
+                        <li class="second-item"><a href="infoTargets">מידע כללי</a></li>
                         <li class="second-item"><a href="#">כלי 1</a></li>
                         <li class="second-item"><a href="#">כלי 2</a></li>
                     </ul>
@@ -158,7 +168,7 @@
 
             <li class="main-item">
                 <div class="selected-container">
-                    <a class="selected" href="toolsActivity">
+                    <a class="selected" href="infoActivity">
                         <img class="sidebar-icon" src="../images/attention.png">
                         פעילות והתרעה
                     </a>
@@ -166,7 +176,7 @@
                 </div>
                 <div class="second-list-container close" id="second-list-5">
                     <ul class="second-list">
-                        <li class="second-item"><a href="toolsActivity">מידע כללי</a></li>
+                        <li class="second-item"><a href="infoActivity">מידע כללי</a></li>
                     </ul>
                 </div>
             </li>
@@ -177,7 +187,7 @@
         <ul class="main-list">
             <li class="main-item">
                 <div class="selected-container">
-                    <a class="selected" href="toolsSensors">
+                    <a class="selected" href="infoSensors">
                         <img class="sidebar-icon" src="../images/briefing.png">
                         פרוייקטים
                     </a>
@@ -185,7 +195,7 @@
                 </div>
                 <div class="second-list-container close" id="second-list-6">
                     <ul class="second-list">
-                        <li class="second-item"><a href="toolsSensors">מידע כללי</a></li>
+                        <li class="second-item"><a href="infoSensors">מידע כללי</a></li>
                         <li class="second-item"><a href="#">כלי 1</a></li>
                         <li class="second-item"><a href="#">כלי 2</a></li>
                     </ul>
@@ -197,7 +207,7 @@
 <!--    end sidebar -->
     <div class="content-container">
         <div class="main-titles">
-                <h1 class="main-title">עיבוד והנגשה</h1>
+                <h1 class="main-title">פיתוח</h1>
                 <h2 class="second-title">הסבר על המדור הסבר על המדור הסבר על המדור הסבר על המדור הסבר על המדור הסבר על המדור הסבר על המדור הסבר על המדור הסבר על המדור הסבר על המדור הסבר על המדור הסבר על המדור הסבר על המדור הסבר על המדור הסבר על המדור הסבר על המדור הסבר על המדור </h2>
         </div>
 
@@ -229,9 +239,29 @@
                     <div class="tool" id="tool-3">
                         כלי 3
                     </div>
-                    <span>כלי לעדכון טבלאות בלה בלה בלה בלה בלה בלה בלה</span>
+                    <span>מיצוי ועיבוד נתונים לפי פרמטרים שונים</span>
                 </div>
 
+                <div class="tool-container">
+                    <div class="tool" id="tool-4">
+                        כלי 4
+                    </div>
+                    <span>מיצוי ועיבוד נתונים לפי פרמטרים שונים</span>
+                </div>
+
+                <div class="tool-container">
+                    <div class="tool" id="tool-5">
+                        כלי 5
+                    </div>
+                    <span>מיצוי ועיבוד נתונים לפי פרמטרים שונים</span>
+                </div>
+
+                <div class="tool-container">
+                    <div class="tool" id="tool-6">
+                        כלי 6
+                    </div>
+                    <span>מיצוי ועיבוד נתונים לפי פרמטרים שונים</span>
+                </div>
             </div>
         </div>
     </div>
@@ -240,11 +270,11 @@
 
 <script src="../javascript/http_code.jquery.com_jquery-3.5.1.js"></script>
 <script src="../javascript/topbarAnimation.js"></script>
-<script src="../javascript/sidebarTools.js"></script>
+<script src="../javascript/sidebarInfo.js"></script>
 <script>
 
     //mark selected section in sidebar on load
-    window.onload = function () {extend_second_list(arrows[0])};
+    window.onload = function () {extend_second_list(arrows[3])};
 </script>
 </body>
 </html>

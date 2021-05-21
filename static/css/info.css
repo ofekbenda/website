@@ -1,0 +1,265 @@
+@font-face {
+    font-family: SecularOne;
+    src: url("../fonts/SecularOne-Regular.ttf");
+}
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background: #E6F1E9;
+}
+.page-container{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    direction: rtl;
+}
+
+/*----------------------------------*/
+.organization-struct-container{
+    width: 100%;
+    margin-top: 6rem;
+}
+
+.main-titles{
+    color: #6b705c;
+    font-family: system-ui;
+    margin-right: 5vw;
+}
+.main-title, .second-title{
+    font-size: 3.6vw;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin: 0;
+}
+.second-title{
+    font-size: 1.4vw;
+    margin-top: 8px;
+    font-weight: 350;
+}
+/* It's supposed to look like a tree diagram */
+figure {
+    direction: ltr;
+    font-size: 1.9vw;
+    text-align: -webkit-center;
+    margin: auto;
+}
+.tree, .tree ul, .tree li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.tree {
+    margin: 0 0 1em;
+    text-align: center;
+}
+.tree, .tree ul {
+    display: table;
+}
+.tree ul {
+  width: 100%;
+}
+    .tree li {
+        display: table-cell;
+        padding: 2.5em 0;
+        vertical-align: top;
+    }
+        /* _________ */
+        .tree li:before {
+            outline: solid 1px #666;
+            content: "";
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 1em;
+        }
+        .tree li:first-child:before {left: 50%;}
+        .tree li:last-child:before {right: 50%;}
+
+        .tree code {
+            border: solid .1em white;
+            border-radius: .2em;
+            display: inline-block;
+            margin: 0 .2em .5em;
+            padding: .2em .5em;
+            position: relative;
+            font-family: SecularOne;
+            color: white;
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 35%);
+        }
+            /* | */
+            .tree ul:before,
+            .tree code:before {
+                outline: solid 1px #666;
+                content: "";
+                height: 1.4em;
+                left: 50%;
+                position: absolute;
+            }
+            .tree ul:before {
+                top: -0.45em;
+            }
+            .tree code:before   {
+                top: -1.55em;
+            }
+
+/* The root node doesn't connect upwards */
+.tree > li {margin-top: 0;}
+    .tree > li:before,
+    .tree > li:after,
+    .tree > li > div > code:before,
+    .tree > li > span:before {
+      outline: none;
+    }
+
+/* sections style */
+a{
+    color: inherit;
+}
+#section-1{
+    color: #ffbc42;
+}
+#section-1:hover + #tooltiptext-1{
+    background-color: #ffbc42;
+}
+#section-1:hover + #tooltiptext-1:after{
+    border-color: transparent transparent #ffbc42 transparent;
+}
+
+#section-2{
+    color: #006ba6;
+}
+#section-2:hover + #tooltiptext-2{
+    background-color: #006ba6;
+}
+#section-2:hover + #tooltiptext-2:after{
+    border-color: transparent transparent #006ba6 transparent;
+}
+
+#section-3{
+    color: #0496ff;
+    /*background-image: url("../images/map.png");*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: 35px 35px;*/
+    /*background-position: left;*/
+    /*padding-left:32px;*/
+}
+#section-3:hover + #tooltiptext-3{
+    background-color: #0496ff;
+}
+#section-3:hover + #tooltiptext-3:after{
+    border-color: transparent transparent #0496ff transparent;
+}
+
+#section-4{
+    color: #52b69a;
+}
+#section-4:hover + #tooltiptext-4{
+    background-color: #52b69a;
+}
+#section-4:hover + #tooltiptext-4:after{
+    border-color: transparent transparent #52b69a transparent;
+}
+
+#section-5{
+    color: #8f2d56;
+}
+#section-5:hover + #tooltiptext-5{
+    background-color: #8f2d56;
+}
+#section-5:hover + #tooltiptext-5:after{
+    border-color: transparent transparent #8f2d56 transparent;
+}
+
+#section-6{
+    color: #d81159;
+}
+#section-6:hover + #tooltiptext-6{
+    background-color: #d81159;
+}
+#section-6:hover + #tooltiptext-6:after{
+    border-color: transparent transparent #d81159 transparent;
+}
+
+#section-7{
+    color: #e76f51;
+}
+#section-7:hover + #tooltiptext-7{
+    background-color: #e76f51;
+}
+#section-7:hover + #tooltiptext-7:after{
+    border-color: transparent transparent #e76f51 transparent;
+}
+#section-8{
+    color: #8c001a;
+}
+#section-8:hover + #tooltiptext-8{
+    background-color: #8c001a;
+}
+#section-8:hover + #tooltiptext-8:after{
+    border-color: transparent transparent #8c001a transparent;
+}
+
+#section-9{
+    color: #ff6700;
+}
+#section-9:hover + #tooltiptext-9{
+    background-color: #ff6700;
+}
+#section-9:hover + #tooltiptext-9:after{
+    border-color: transparent transparent #ff6700 transparent;
+}
+
+#section-10{
+    color: #6eeb83;
+}
+#section-10:hover + #tooltiptext-10{
+    background-color: #6eeb83;
+}
+#section-10:hover + #tooltiptext-10:after{
+    border-color: transparent transparent #6eeb83 transparent;
+}
+
+
+#section-1:hover, #section-2:hover, #section-3:hover, #section-4:hover,
+#section-5:hover, #section-6:hover, #section-7:hover, #section-8:hover, #section-9:hover , #section-10:hover{
+    background: #666;
+    color: white;
+    cursor: pointer;
+}
+
+span.tooltiptext{
+    visibility: hidden;
+    width: 450px;
+    height: 150px;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 6;
+    font-size: large;
+    margin: 5em -18em;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-family: system-ui;
+}
+.tooltiptext::after{
+    content: "";
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    border-width: 7px;
+    border-style: solid;
+}
+.section:hover + .tooltiptext {
+  visibility: visible;
+  opacity: 0.9;
+}
+

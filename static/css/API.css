@@ -1,0 +1,45 @@
+body{
+    background: #E6F1E9;
+    margin: 4vw;
+    direction: rtl;
+}
+.drag-area{
+    border: 5px dashed #fff;
+    height: 14vw;
+    width: 50vw;
+    border-radius: 14px;
+    text-align: center;
+    background: #c8dadf;
+    font-family: system-ui;
+}
+
+.drag-area .icon{
+    height: 5vw;
+    color: #fff;
+}
+.drag-area header{
+  font-size: 2vw;
+  font-weight: 500;
+  color: #fff;
+}
+.drag-area span{
+  font-size: 1.4vw;
+  font-weight: 500;
+  color: #fff;
+}
+.drag-area button{
+    padding: 0.6vw 1vw;
+    font-size: 1.5vw;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: #fff;
+    color: #5256ad;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 0.4vw;
+}
+.drag-area img{
+    height: 100%;
+    border-radius: 5px;
+}
